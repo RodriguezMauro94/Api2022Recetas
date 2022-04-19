@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,6 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import FaceIcon from '@mui/icons-material/Face';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Drawer, List, ListItem, useMediaQuery } from '@material-ui/core';
+import { orange } from '@mui/material/colors';
+import { styled } from '@mui/material/styles';
 
 export default function NonnaAppBar() {
   const classes = useStyles();
@@ -26,33 +28,33 @@ export default function NonnaAppBar() {
             </Typography>
           </IconButton>
           <div className={classes.title}></div>
-          
-          { isMobile ? (
+
+          {isMobile ? (
             <>
               <IconButton onClick={() => setOpenDrawer(!openDrawer)} >
                 <MenuIcon></MenuIcon>
               </IconButton>
               <Drawer
                 anchor='right'
-                onClose = {() => setOpenDrawer(false)}
+                onClose={() => setOpenDrawer(false)}
                 open={openDrawer}>
-                  <List>
-                    <ListItem>
-                      <Button color="inherit" className={classes.menuButton}>Recetas</Button>
-                    </ListItem>  
-                    <ListItem>
-                      <Button color="inherit" className={classes.menuButton}>Categorías</Button>
-                    </ListItem>  
-                    <ListItem>
-                      <Button className={classes.menuButtonSecondary}>Ingresar</Button>
-                    </ListItem>  
-                    <ListItem>
-                      <Button className={classes.menuButtonSecondary}>Mi Perfil</Button>
-                    </ListItem>  
-                    <ListItem>
-                      <Button className={classes.menuButtonPrimary}>Registrate</Button>
-                    </ListItem>  
-                  </List>
+                <List>
+                  <ListItem>
+                    <Button color="inherit" className={classes.menuButton}>Recetas</Button>
+                  </ListItem>
+                  <ListItem>
+                    <Button color="inherit" className={classes.menuButton}>Categorías</Button>
+                  </ListItem>
+                  <ListItem>
+                    <Button className={classes.menuButtonSecondary}>Ingresar</Button>
+                  </ListItem>
+                  <ListItem>
+                    <Button className={classes.menuButtonSecondary}>Mi Perfil</Button>
+                  </ListItem>
+                  <ListItem>
+                    <PrimaryButton>Registrate</PrimaryButton>
+                  </ListItem>
+                </List>
               </Drawer>
             </>
           ) : (
@@ -61,7 +63,7 @@ export default function NonnaAppBar() {
               <Button color="inherit" className={classes.menuButton}>Categorías</Button>
               <Button className={classes.menuButtonSecondary}>Ingresar</Button>
               <Button className={classes.menuButtonSecondary}>Mi Perfil</Button>
-              <Button className={classes.menuButtonPrimary}>Registrate</Button>
+              <PrimaryButton>Registrate</PrimaryButton>
             </>
           )}
         </Toolbar>
@@ -91,12 +93,16 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "20px",
     border: "1px solid #FF8A00",
     boxSizing: "border-box"
-  },
-  menuButtonPrimary: {
-    backgroundColor: "#FF8A00",
-    color: "#FFF",
-    borderRadius: "20px",
-    marginLeft: "5px",
-    marginRight: "5px"
   }
+}));
+
+const PrimaryButton = styled(Button)(({ theme }) => ({
+  color: "#FFF",
+  backgroundColor: orange[500],
+  '&:hover': {
+    backgroundColor: orange[700],
+  },
+  borderRadius: 20,
+  marginLeft: "5px",
+  marginRight: "5px"
 }));
