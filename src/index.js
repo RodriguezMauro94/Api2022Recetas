@@ -9,6 +9,7 @@ import NonnaRecipeResume from './components/NonnaRecipeResume';
 import NonnaLogin from './components/NonnaLogin';
 import NonnaRegister from './components/NonnaRegister';
 import NonnaReview from './components/NonnaReview';
+import NonnaSectionSubtitle from './components/NonnaSectionSubtitle';
 import reportWebVitals from './reportWebVitals';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -36,6 +37,7 @@ ReactDOM.render(
       celiac={true} />
     <NonnaLogin />
     <NonnaRegister />
+    <NonnaSectionSubtitle sectionTitle="Reseñas" />
     <NonnaReview 
       reviewUser="Vito Corleone"
       reviewRating="4"
