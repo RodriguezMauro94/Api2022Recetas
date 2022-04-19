@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { Stack, Container, Rating } from '@mui/material';
+import { Stack, Rating } from '@mui/material';
 
 export default function NonnaReview(props) {
     const classes = useStyles();
