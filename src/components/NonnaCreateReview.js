@@ -13,6 +13,7 @@ export default function NonnaCreateReview() {
             <TextField
                 label="Escriba su reseña"
                 multiline
+                variant="filled"
                 maxRows={4}
                 className={classes.review}
             />

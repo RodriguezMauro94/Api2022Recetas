@@ -27,7 +27,7 @@ export default function NonnaHeaderLanding() {
             <Container>
                 <StyledTextField 
                     fullWidth 
-                    variant="outlined" 
+                    variant="filled"
                     label="Encontrá la receta que buscabas..." 
                     className={classes.searchInput}
                     InputProps={{
