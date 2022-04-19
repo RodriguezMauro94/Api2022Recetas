@@ -11,6 +11,7 @@ import NonnaRegister from './components/NonnaRegister';
 import NonnaReview from './components/NonnaReview';
 import NonnaSectionSubtitle from './components/NonnaSectionSubtitle';
 import NonnaCreateReview from './components/NonnaCreateReview';
+import NonnaRecipeIngredients from './components/NonnaRecipeIngredients';
 import reportWebVitals from './reportWebVitals';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -50,6 +51,7 @@ ReactDOM.render(
       reviewDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam." 
     />
     <NonnaCreateReview />
+    <NonnaRecipeIngredients />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
