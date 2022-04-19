@@ -11,15 +11,15 @@ import Paper from '@mui/material/Paper';
 
 function createData(ingredient) {
     return { ingredient };
-  }
-  
-  const rows = [
+}
+
+const rows = [
     createData('1 Pollo troceado'),
     createData('1 cucharadita de sal'),
     createData('2 cucharadas de zumo de limón'),
     createData('1/2 cucharadita de pimienta negra'),
     createData('1 cucharada de pasta de ajo y jengibre'),
-  ];
+];
 
 export default function NonnaRecipeIngredients(props) {
     const classes = useStyles();
