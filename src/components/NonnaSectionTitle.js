@@ -8,7 +8,7 @@ export default function NonnaSectionTitle(props) {
   return (
     <div className={classes.sectionRow}>
         <div className={classes.sectionDivider}></div>
-        <Typography variant="h5" className={classes.title}>
+        <Typography variant="h5">
             {props.sectionTitle}
         </Typography>
         <div className={classes.sectionDivider}></div>

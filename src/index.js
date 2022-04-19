@@ -8,6 +8,7 @@ import NonnaHeaderLanding from './components/NonnaHeaderLanding';
 import NonnaRecipeResume from './components/NonnaRecipeResume';
 import NonnaLogin from './components/NonnaLogin';
 import NonnaRegister from './components/NonnaRegister';
+import NonnaReview from './components/NonnaReview';
 import reportWebVitals from './reportWebVitals';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -35,6 +36,16 @@ ReactDOM.render(
       celiac={true} />
     <NonnaLogin />
     <NonnaRegister />
+    <NonnaReview 
+      reviewUser="Vito Corleone"
+      reviewRating="4"
+      reviewDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam." 
+    />
+    <NonnaReview 
+      reviewUser="Knight of Ni"
+      reviewRating="3"
+      reviewDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam." 
+    />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
