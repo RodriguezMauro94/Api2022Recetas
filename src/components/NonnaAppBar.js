@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Drawer, List, ListItem, useMediaQuery } from '@material-ui/core';
 import { orange } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 export default function NonnaAppBar() {
   const classes = useStyles();
@@ -21,12 +22,14 @@ export default function NonnaAppBar() {
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <FaceIcon />
-            <Typography variant="h6" >
-              La Nonna
-            </Typography>
-          </IconButton>
+          <Link to='/' style={{ textDecoration: 'none' }}>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <FaceIcon />
+              <Typography variant="h6" >
+                La Nonna
+              </Typography>
+            </IconButton>
+          </Link>
           <div className={classes.title}></div>
 
           {isMobile ? (
@@ -40,30 +43,50 @@ export default function NonnaAppBar() {
                 open={openDrawer}>
                 <List>
                   <ListItem>
-                    <Button color="inherit" className={classes.menuButton}>Recetas</Button>
+                    <Link to='/buscar' style={{ textDecoration: 'none' }}>
+                      <Button color="inherit" className={classes.menuButton}>Recetas</Button>
+                    </Link>
                   </ListItem>
                   <ListItem>
-                    <Button color="inherit" className={classes.menuButton}>Categorías</Button>
+                    <Link to='/categorias' style={{ textDecoration: 'none' }}>
+                      <Button color="inherit" className={classes.menuButton}>Categorías</Button>
+                    </Link>
                   </ListItem>
                   <ListItem>
-                    <Button className={classes.menuButtonSecondary}>Ingresar</Button>
+                    <Link to='/login' style={{ textDecoration: 'none' }}>
+                      <Button className={classes.menuButtonSecondary}>Ingresar</Button>
+                    </Link>
                   </ListItem>
                   <ListItem>
-                    <Button className={classes.menuButtonSecondary}>Mi Perfil</Button>
+                    <Link to='/perfil' style={{ textDecoration: 'none' }}>
+                      <Button className={classes.menuButtonSecondary}>Mi Perfil</Button>
+                    </Link>
                   </ListItem>
                   <ListItem>
-                    <PrimaryButton>Registrate</PrimaryButton>
+                    <Link to='/registro' style={{ textDecoration: 'none' }}>
+                      <PrimaryButton>Registrate</PrimaryButton>
+                    </Link>
                   </ListItem>
                 </List>
               </Drawer>
             </>
           ) : (
             <>
-              <Button color="inherit" className={classes.menuButton}>Recetas</Button>
-              <Button color="inherit" className={classes.menuButton}>Categorías</Button>
-              <Button className={classes.menuButtonSecondary}>Ingresar</Button>
-              <Button className={classes.menuButtonSecondary}>Mi Perfil</Button>
-              <PrimaryButton>Registrate</PrimaryButton>
+              <Link to='/buscar' style={{ textDecoration: 'none' }}>
+                <Button color="inherit" className={classes.menuButton}>Recetas</Button>
+              </Link>
+              <Link to='/categorias' style={{ textDecoration: 'none' }}>
+                <Button color="inherit" className={classes.menuButton}>Categorías</Button>
+              </Link>
+              <Link to='/login' style={{ textDecoration: 'none' }}>
+                <Button className={classes.menuButtonSecondary}>Ingresar</Button>
+              </Link>
+              <Link to='/perfil' style={{ textDecoration: 'none' }}>
+                <Button className={classes.menuButtonSecondary}>Mi Perfil</Button>
+              </Link>
+              <Link to='/registro' style={{ textDecoration: 'none' }}>
+                <PrimaryButton>Registrate</PrimaryButton>
+              </Link>
             </>
           )}
         </Toolbar>

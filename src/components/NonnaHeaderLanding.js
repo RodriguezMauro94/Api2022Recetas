@@ -9,39 +9,42 @@ import { styled } from '@mui/material/styles';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom';
 
 export default function NonnaHeaderLanding() {
   const classes = useStyles();
 
   return (
     <div className={classes.landing}>
-        <Stack spacing={2}>
-            <Container>
-                <Typography className={classes.landingTitle} variant="h3">
-                    Los secretos de La Nonna
-                </Typography>
-                <Typography className={classes.landingSubtitle} variant="h5">
-                    Compartí los secretos de tu nonna
-                </Typography>
-            </Container>
-            <Container>
-                <StyledTextField 
-                    fullWidth 
-                    variant="filled"
-                    label="Encontrá la receta que buscabas..." 
-                    className={classes.searchInput}
-                    InputProps={{
-                        endAdornment: (
-                        <InputAdornment position="end">
-                            <IconButton edge="end" >
-                                <SearchIcon />
-                            </IconButton>
-                        </InputAdornment>
-                        ),
-                    }}
-                />
-            </Container>
-        </Stack>
+      <Stack spacing={2}>
+        <Container>
+          <Typography className={classes.landingTitle} variant="h3">
+            Los secretos de La Nonna
+          </Typography>
+          <Typography className={classes.landingSubtitle} variant="h5">
+            Compartí los secretos de tu nonna
+          </Typography>
+        </Container>
+        <Container>
+          <StyledTextField
+            fullWidth
+            variant="filled"
+            label="Encontrá la receta que buscabas..."
+            className={classes.searchInput}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton edge="end" >
+                    <Link to='buscar' style={{ textDecoration: 'none' }}>
+                      <SearchIcon />
+                    </Link>
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Container>
+      </Stack>
     </div>
   );
 }
@@ -76,25 +79,25 @@ const useStyles = makeStyles(() => ({
 }));
 
 const StyledTextField = styled(TextField)({
-    '& label.Mui-focused': {
-      color: 'black',
+  '& label.Mui-focused': {
+    color: 'black',
+  },
+  '& .MuiInputBase-input': {
+    borderRadius: 20,
+    fontSize: 16,
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'white',
+      borderRadius: "20px"
     },
-    '& .MuiInputBase-input': {
-        borderRadius: 20,
-        fontSize: 16,
+    '&:hover fieldset': {
+      borderColor: 'white',
+      borderRadius: "20px"
     },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'white',
-        borderRadius: "20px"
-      },
-      '&:hover fieldset': {
-        borderColor: 'white',
-        borderRadius: "20px"
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'white',
-        borderRadius: "20px"
-      },
+    '&.Mui-focused fieldset': {
+      borderColor: 'white',
+      borderRadius: "20px"
     },
+  },
 });
