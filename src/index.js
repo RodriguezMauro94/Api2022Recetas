@@ -2,57 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import NonnaAppBar from './components/NonnaAppBar';
-import NonnaSectionTitle from './components/NonnaSectionTitle';
-import NonnaHeaderLanding from './components/NonnaHeaderLanding';
-import NonnaRecipeResume from './components/NonnaRecipeResume';
-import NonnaLogin from './components/NonnaLogin';
-import NonnaRegister from './components/NonnaRegister';
-import NonnaReview from './components/NonnaReview';
-import NonnaSectionSubtitle from './components/NonnaSectionSubtitle';
-import NonnaCreateReview from './components/NonnaCreateReview';
-import NonnaRecipeIngredients from './components/NonnaRecipeIngredients';
 import reportWebVitals from './reportWebVitals';
-import CssBaseline from '@mui/material/CssBaseline';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NonnaHomePage from './pages/NonnaHomePage';
+import NonnaNotFound from './pages/NonnaNotFound';
+import NonnaRegisterPage from './pages/NonnaRegisterPage';
+import NonnaLoginPage from './pages/NonnaLoginPage';
+import NonnaRecipePage from './pages/NonnaRecipePage';
+import NonnaSearchPage from './pages/NonnaSearchPage';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CssBaseline />
-    <NonnaAppBar />
-    <NonnaHeaderLanding />
-    <NonnaSectionTitle sectionTitle="Recetas destacadas" />
-    <NonnaSectionTitle sectionTitle="Categorías" />
-    <NonnaRecipeResume
-      image="pollo_teriyaki"
-      recipeTitle="Pollo teriyaki"
-      recipeDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
-      rating="4"
-      dificulty="Fácil"
-      vegan={true}
-      celiac={true} />
-    <NonnaRecipeResume
-      image="pollo_teriyaki"
-      recipeTitle="Pollo tandori"
-      recipeDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
-      rating="3"
-      dificulty="Difícil"
-      celiac={true} />
-    <NonnaLogin />
-    <NonnaRegister />
-    <NonnaSectionSubtitle sectionTitle="Reseñas" />
-    <NonnaReview 
-      reviewUser="Vito Corleone"
-      reviewRating="4"
-      reviewDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam." 
-    />
-    <NonnaReview 
-      reviewUser="Knight of Ni"
-      reviewRating="3"
-      reviewDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam." 
-    />
-    <NonnaCreateReview />
-    <NonnaRecipeIngredients />
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<App />}>
+          <Route index element={<NonnaHomePage />} />
+          <Route path='registro' element={<NonnaRegisterPage />} />
+          <Route path='login' element={<NonnaLoginPage />} />
+          <Route path='receta' element={<NonnaRecipePage />} />
+          <Route path='buscar' element={<NonnaSearchPage />} />
+
+          <Route path='*' element={<NonnaNotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -2,13 +2,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { Stack } from '@mui/material';
-import { Button, Container, Link, TextField } from '@material-ui/core';
+import { Button, Container, TextField } from '@material-ui/core';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { orange } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 export default function NonnaLogin() {
     const classes = useStyles();
@@ -75,8 +76,8 @@ export default function NonnaLogin() {
                 <Container>
                     <Stack className={classes.loginButtons}>
                         <LoginButton>Ingresar</LoginButton>
-                        <Link href="#" color="inherit">Olvidaste la contraseña?</Link>
-                        <Link href="#" color="inherit">No tenés cuenta? Registrate!</Link>
+                        <Link to="/olvido-de-password" color="inherit">Olvidaste la contraseña?</Link>
+                        <Link to="/registro" color="inherit">No tenés cuenta? Registrate!</Link>
                     </Stack>
                 </Container>
             </Stack>
