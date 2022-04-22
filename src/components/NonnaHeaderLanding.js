@@ -35,7 +35,7 @@ export default function NonnaHeaderLanding() {
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton edge="end" >
-                    <Link to='buscar' style={{ textDecoration: 'none' }}>
+                    <Link to='/buscar' style={{ textDecoration: 'none' }}>
                       <SearchIcon />
                     </Link>
                   </IconButton>
