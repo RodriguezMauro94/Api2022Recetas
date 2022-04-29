@@ -68,19 +68,16 @@ Trabajo practico obligatorio 2022 para aplicaciones interactivas. El mismo es de
 Para llevar acabo el mismo se decidio crear La Nonna , una web destinada a compartir las recetas de tu nonna y poder ver las recetas que comparten otros usuarios.
 
 Para satisfacer los requerimientos la misma incluye:
-* Descripcion de la aplicacion: Explicacion de las funcionalidades disponibles para los usuarios.
-* Regustri de nuevos usuarios.
-* Ingreso a la aplicacion.
+* Descripcion de la aplicacion: Explicacion de las funcionalidades disponibles para los usuarios. :memo:
+* Registro de nuevos usuarios. :file_folder:
+* Ingreso a la aplicacion. :arrow_up:
 * Busqueda de la receta por filtros (Ingredientes :lemon: , Categoria :bookmark_tabs: , dificultad :star: )
 * Registro e ingreso de usuarios :busts_in_silhouette:
 * Perfiles de Usuarios :man:
 * Registro y modificacion de recetas :notebook:
 * Calificacion de recetas :100:
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
+Para cualquier duda o cuestion pueden hacer uso del `README.md` . En caso de no encontrar lo que necesario pueden contactarnos.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
