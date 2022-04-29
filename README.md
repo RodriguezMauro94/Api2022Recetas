@@ -81,13 +81,12 @@ Use the `BLANK_README.md` to get started.
 
 ### Tecnologias
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Aqui podras ver las tecnologias que se utilizaron para llevar acabo el proyecto! :rocket:
 
-* [Next.js](https://nextjs.org/)
 * [React.js](https://reactjs.org/)
-* [Laravel](https://laravel.com)
+* [MaterialUI](https://mui.com/)
 * [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Figma](https://www.figma.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -187,7 +186,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/RodriguezMauro94/Api2022Recetas](https://github.com/RodriguezMauro94/Api2022Recetas)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
