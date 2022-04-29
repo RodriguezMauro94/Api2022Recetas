@@ -158,16 +158,16 @@ See the [open issues](https://github.com/) for a full list of proposed features 
 <!-- CONTRIBUTING -->
 ## Contribuir
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Las contribuciones son lo que hace que la comunidad de código abierto sea un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas es **muy apreciada**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Si tiene una sugerencia que mejoraría esto, bifurque el repositorio y cree una solicitud de Pull. También puede simplemente abrir un Issue con la etiqueta "mejora". 
+¡No olvides darle una estrella al proyecto! ¡Gracias de nuevo!
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Bifurque el proyecto
+2. Crea tu Branch de mejoras (`git checkout -b mejoras/SuperMejora`)
+3. Commit tu cambios (`git commit -m 'Add SuperMejora'`)
+4. Push a tu Branch (`git push origin mejoras/SuperMejora`)
+5. Genera una solicitud de Pull
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
