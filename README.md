@@ -95,15 +95,13 @@ Aqui podras ver las tecnologias que se utilizaron para llevar acabo el proyecto!
 <!-- GETTING STARTED -->
 ## Como-Comenzar
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Aqui encontraras los requisitos para poder correr el proyecto al igual que un breve intructivo de su instalacion.
 
 ### Prerequisitos
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
-  npm install npm@latest -g
+  npm install 
   ```
 
 ### Instalacion
