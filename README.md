@@ -214,13 +214,13 @@ Remplazar con todos los recursos que utilizamos para llevar acabo el proyecto!
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/
+[contributors-url]: https://github.com/RodriguezMauro94/Api2022Recetas/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/RodriguezMauro94/Api2022Recetas
+[forks-url]: https://github.com/RodriguezMauro94/Api2022Recetas/network/members
+[stars-shield]: https://img.shields.io/github/stars/RodriguezMauro94/Api2022Recetas
+[stars-url]: https://github.com/RodriguezMauro94/Api2022Recetas/stargazers
+[issues-shield]: https://img.shields.io/github/issues/RodriguezMauro94/Api2022Recetas
+[issues-url]: https://github.com/RodriguezMauro94/Api2022Recetas/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/
 [product-screenshot]: images/screenshot.png
