@@ -60,7 +60,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Acerca-del-Proyecto
+## Acerca-del-Proyecto :books:
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
