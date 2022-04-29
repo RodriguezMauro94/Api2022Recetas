@@ -25,7 +25,7 @@ export default function StickyFooter() {
         display: 'flex',
         flexDirection: 'column',
         /* Esta altura representa el espacio blanco previo al footer, debemos buscar si hay algun estandar de accesibilidad */
-        minHeight: '25vh',
+        minHeight: '100vh',
       }}
     >
       <CssBaseline />
