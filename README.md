@@ -213,7 +213,7 @@ Remplazar con todos los recursos que utilizamos para llevar acabo el proyecto!
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/RodriguezMauro94/Api2022Recetas?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/RodriguezMauro94/Api2022Recetas?color=brightgreen&style=for-the-badge
 [contributors-url]: https://github.com/RodriguezMauro94/Api2022Recetas/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/RodriguezMauro94/Api2022Recetas?style=for-the-badge
 [forks-url]: https://github.com/RodriguezMauro94/Api2022Recetas/network/members
