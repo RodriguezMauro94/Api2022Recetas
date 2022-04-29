@@ -64,12 +64,18 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Trabajo practico obligatorio 2022 para aplicaciones interactivas. El mismo es destinado a generar una aplicacion web de recetas.
+Para llevar acabo el mismo se decidio crear La Nonna , una web destinada a compartir las recetas de tu nonna y poder ver las recetas que comparten otros usuarios.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+Para satisfacer los requerimientos la misma incluye:
+* Descripcion de la aplicacion: Explicacion de las funcionalidades disponibles para los usuarios.
+* Regustri de nuevos usuarios.
+* Ingreso a la aplicacion.
+* Busqueda de la receta por filtros (Ingredientes :lemon: , Categoria :bookmark_tabs: , dificultad :star: )
+* Registro e ingreso de usuarios :busts_in_silhouette:
+* Perfiles de Usuarios :man:
+* Registro y modificacion de recetas :notebook:
+* Calificacion de recetas :100:
 
 Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
 
@@ -106,20 +112,19 @@ Aqui encontraras los requisitos para poder correr el proyecto al igual que un br
 
 ### Instalacion
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+Aqui podras encontrar el paso a paso de como instalar y correr el proyecto. :books:
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/RodriguezMauro94/Api2022Recetas.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Run the project
+   ```sh
+   npm run
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -129,9 +134,9 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Uso
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Este proyecto podra ser utilizado como un template generico de paginas de recetas. El mismo podra ser modificado para satisfacer los requerimientos del usuario.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_Para mas ejemplos, por favor referirse a [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
