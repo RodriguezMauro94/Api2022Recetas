@@ -3,14 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableRow } from '@material-ui/core';
 import NonnaRecipeCard from './NonnaRecipeCard';
 
-export default function NonnaTopRecipes() {
+export default function NonnaRecipesSlider() {
     const classes = useStyles();
 
     return (
         <TableContainer>
             <Table sx={{ minWidth: 700 }} aria-label="Recetas destacadas">
                 <TableBody>
-
                     <TableRow>
                     {rows.map((row) => (
                         <TableCell className={classes.cell} scope="row">
@@ -18,7 +17,6 @@ export default function NonnaTopRecipes() {
                         </TableCell>
                     ))}
                     </TableRow>
-
                 </TableBody>
             </Table>
         </TableContainer>
