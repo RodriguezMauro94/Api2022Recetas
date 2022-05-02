@@ -61,7 +61,7 @@ export default function NonnaLogin() {
               required
               fullWidth
               id="email"
-              label="Correo Electronico"
+              label="Correo Electrónico"
               name="email"
               autoComplete="email"
               autoFocus
