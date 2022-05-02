@@ -88,7 +88,6 @@ Aqui podras ver las tecnologias que se utilizaron para llevar acabo el proyecto!
 
 * [React.js](https://reactjs.org/)
 * [MaterialUI](https://mui.com/)
-* [Bootstrap](https://getbootstrap.com)
 * [Figma](https://www.figma.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

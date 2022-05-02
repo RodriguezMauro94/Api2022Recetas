@@ -89,6 +89,7 @@ export default function NonnaRegister2() {
                             fullWidth
                             id="cel"
                             name="cel"
+                            type="number"
                             label="Teléfono"
                         />
                         <TextField
@@ -106,8 +107,8 @@ export default function NonnaRegister2() {
                             required
                             fullWidth
                             id="repitPassword"
-                            label="repitPassword"
-                            name="Repetir contraseña"
+                            name="repitPassword"
+                            label="Repetir Contraseña"
                             type="password"
                         />
                         <RegisterButton
