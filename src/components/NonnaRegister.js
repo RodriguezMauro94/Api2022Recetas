@@ -1,163 +1,135 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import { Stack } from '@mui/material';
-import { Button, Container, TextField } from '@material-ui/core';
-import InputAdornment from '@mui/material/InputAdornment';
-import IconButton from '@mui/material/IconButton';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
 import { orange } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 
 export default function NonnaRegister() {
-    const classes = useStyles();
-    const handleMouseDownPassword = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-    };
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
-    const handleClickShowPassword = () => {
-        setValues({
-            ...values,
-            showPassword: !values.showPassword,
+        const data = new FormData(event.currentTarget);
+        console.log({
+            name: data.get('name'),
+            lastName: data.get('lastName'),
+            email: data.get('email'),
+            cel: data.get('cel'),
+            password: data.get('password'),
+            repitPassword: data.get('repitPassword')
         });
     };
-
-    const handleClickShowReenterPassword = () => {
-        setValues({
-            ...values,
-            showReenterPassword: !values.showReenterPassword,
-        });
-    };
-
-    const [values, setValues] = React.useState({
-        password: '',
-        reenterPassword: '',
-        showPassword: false,
-        showReenterPassword: false,
-    });
 
     return (
-        <div className={classes.root}>
-            <Stack>
-                <Container>
-                    <Typography className={classes.title} variant="h4">
-                        Registrate
+        <Grid container component="main" sx={{ height: '100vh' }}>
+            <Grid
+                item
+                xs={false}
+                sm={4}
+                md={7}
+                sx={{
+                    backgroundImage: 'url(https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80)',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundColor: (t) =>
+                        t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            />
+            <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+                <Box
+                    sx={{
+                        my: 8,
+                        mx: 4,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                        <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h1" variant="h5">
+                        Registrate!
                     </Typography>
-                </Container>
-                <Container>
-                    <TextField
-                        fullWidth
-                        variant="outlined"
-                        label="Nombre"
-                        className={classes.input}
-                    />
-                    <TextField
-                        fullWidth
-                        variant="outlined"
-                        label="Apellido"
-                        className={classes.input}
-                    />
-                    <TextField
-                        fullWidth
-                        variant="outlined"
-                        label="Correo electrónico"
-                        className={classes.input}
-                    />
-                    <TextField
-                        fullWidth
-                        variant="outlined"
-                        label="Número de teléfono"
-                        className={classes.input}
-                    />
-                    <TextField
-                        className={classes.input}
-                        fullWidth
-                        variant="outlined"
-                        type={values.showPassword ? 'text' : 'password'}
-                        value={values.password}
-                        label="Contraseña"
-                        onChange={handleChange('password')}
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        aria-label="Mostrar/Ocultar"
-                                        onClick={handleClickShowPassword}
-                                        onMouseDown={handleMouseDownPassword}
-                                        edge="end"
-                                    >
-                                        {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                                    </IconButton>
-                                </InputAdornment>
-                            ),
-                        }}
-                    />
-                    <TextField
-                        className={classes.input}
-                        fullWidth
-                        variant="outlined"
-                        type={values.showReenterPassword ? 'text' : 'password'}
-                        value={values.reenterPassword}
-                        label="Repetir contraseña"
-                        onChange={handleChange('reenterPassword')}
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        aria-label="Mostrar/Ocultar"
-                                        onClick={handleClickShowReenterPassword}
-                                        onMouseDown={handleMouseDownPassword}
-                                        edge="end"
-                                    >
-                                        {values.showReenterPassword ? <Visibility /> : <VisibilityOff />}
-                                    </IconButton>
-                                </InputAdornment>
-                            ),
-                        }}
-                    />
-                </Container>
-                <Container>
-                    <Stack className={classes.primaryButton}>
-                        <PrimaryButton>Registrarse</PrimaryButton>
-                    </Stack>
-                </Container>
-            </Stack>
-        </div>
+                    <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="name"
+                            name="name"
+                            label="Nombre"
+                            autoFocus
+                        />
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="lastName"
+                            name="lastName"
+                            label="Apellido"
+                        />
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="email"
+                            name="email"
+                            label="Correo Electronico"
+                            autoComplete="email"
+                        />
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="cel"
+                            name="cel"
+                            type="number"
+                            label="Teléfono"
+                        />
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="password"
+                            name="password"
+                            label="Contraseña"
+                            type="password"
+                            autoComplete="current-password"
+                        />
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="repitPassword"
+                            name="repitPassword"
+                            label="Repetir Contraseña"
+                            type="password"
+                        />
+                        <RegisterButton
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}>
+                            Registrate
+                        </RegisterButton>
+                    </Box>
+                </Box>
+            </Grid>
+        </Grid>
     );
 }
 
-const useStyles = makeStyles(() => ({
-    root: {
-        marginLeft: "100px",
-        marginRight: "100px"
-    },
-    title: {
-        textAlign: "center",
-        marginBottom: "50px"
-    },
-    input: {
-        color: "black",
-        borderBottomColor: 'white',
-        marginBottom: "25px",
-    },
-    primaryButton: {
-        alignItems: "center"
-    }
-}));
-
-const PrimaryButton = styled(Button)(({ theme }) => ({
+const RegisterButton = styled(Button)(({ theme }) => ({
     color: theme.palette.getContrastText(orange[500]),
     backgroundColor: orange[500],
     '&:hover': {
         backgroundColor: orange[700],
     },
-    borderRadius: 20,
-    paddingLeft: "15px",
-    paddingRight: "15px",
-    marginBottom: "15px"
+    borderRadius: 20
 }));

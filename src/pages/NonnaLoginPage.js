@@ -1,10 +1,10 @@
 import React from "react";
-import NonnaLogin2 from "../components/NonnaLogin2";
+import NonnaLogin from "../components/NonnaLogin";
 
 export default function NonnaLoginPage() {
   return (
     <>
-        <NonnaLogin2 />
+        <NonnaLogin />
     </>
   );
 }

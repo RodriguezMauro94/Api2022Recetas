@@ -1,10 +1,10 @@
 import React from "react";
-import NonnaRegister2 from "../components/NonnaRegister2";
+import NonnaRegister from "../components/NonnaRegister";
 
 export default function NonnaRegisterPage() {
   return (
     <>
-        <NonnaRegister2 />
+        <NonnaRegister />
     </>
   );
 }
