@@ -144,7 +144,6 @@ _Para mas ejemplos, por favor referirse a [Documentation](https://example.com)_
 - [x] Agregar Changelog
 - [ ] Agregar documentacion "components" para facilitar la seleccion de los mismos desde el readme
 - [ ] Soporte multi lenguaje
-    - [ ] italiano
     - [ ] ingles
 
 See the [open issues](https://github.com/) for a full list of proposed features (and known issues).
