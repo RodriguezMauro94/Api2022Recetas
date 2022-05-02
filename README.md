@@ -88,7 +88,6 @@ Aqui podras ver las tecnologias que se utilizaron para llevar acabo el proyecto!
 
 * [React.js](https://reactjs.org/)
 * [MaterialUI](https://mui.com/)
-* [Bootstrap](https://getbootstrap.com)
 * [Figma](https://www.figma.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -145,7 +144,6 @@ _Para mas ejemplos, por favor referirse a [Documentation](https://example.com)_
 - [x] Agregar Changelog
 - [ ] Agregar documentacion "components" para facilitar la seleccion de los mismos desde el readme
 - [ ] Soporte multi lenguaje
-    - [ ] italiano
     - [ ] ingles
 
 See the [open issues](https://github.com/) for a full list of proposed features (and known issues).
