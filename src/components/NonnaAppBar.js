@@ -42,51 +42,23 @@ export default function NonnaAppBar() {
                 onClose={() => setOpenDrawer(false)}
                 open={openDrawer}>
                 <List>
-                  <ListItem>
-                    <Link to='/buscar' style={{ textDecoration: 'none' }}>
-                      <Button color="inherit" className={classes.menuButton}>Recetas</Button>
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link to='/categorias' style={{ textDecoration: 'none' }}>
-                      <Button color="inherit" className={classes.menuButton}>Categorías</Button>
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link to='/login' style={{ textDecoration: 'none' }}>
-                      <Button className={classes.menuButtonSecondary}>Ingresar</Button>
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link to='/perfil' style={{ textDecoration: 'none' }}>
-                      <Button className={classes.menuButtonSecondary}>Mi Perfil</Button>
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link to='/registro' style={{ textDecoration: 'none' }}>
-                      <PrimaryButton>Registrate</PrimaryButton>
-                    </Link>
-                  </ListItem>
+                  {items.map((row) => (
+                    <ListItem>
+                      <Link to={row.to} style={{ textDecoration: 'none' }}>
+                        {getButton(row, classes)}
+                      </Link>
+                    </ListItem>
+                  ))}
                 </List>
               </Drawer>
             </>
           ) : (
             <>
-              <Link to='/buscar' style={{ textDecoration: 'none' }}>
-                <Button color="inherit" className={classes.menuButton}>Recetas</Button>
-              </Link>
-              <Link to='/categorias' style={{ textDecoration: 'none' }}>
-                <Button color="inherit" className={classes.menuButton}>Categorías</Button>
-              </Link>
-              <Link to='/login' style={{ textDecoration: 'none' }}>
-                <Button className={classes.menuButtonSecondary}>Ingresar</Button>
-              </Link>
-              <Link to='/perfil' style={{ textDecoration: 'none' }}>
-                <Button className={classes.menuButtonSecondary}>Mi Perfil</Button>
-              </Link>
-              <Link to='/registro' style={{ textDecoration: 'none' }}>
-                <PrimaryButton>Registrate</PrimaryButton>
-              </Link>
+              {items.map((row) => (
+                <Link to={row.to} style={{ textDecoration: 'none' }}>
+                  {getButton(row, classes)}
+                </Link>
+              ))}
             </>
           )}
         </Toolbar>
@@ -129,3 +101,47 @@ const PrimaryButton = styled(Button)(({ theme }) => ({
   marginLeft: "5px",
   marginRight: "5px"
 }));
+
+function getButton(row, classes) {
+  if (row.type === 'primary') {
+    return (
+      <PrimaryButton>{row.description}</PrimaryButton>
+    )
+  } else {
+    return (
+      <Button color="inherit" className={classes.menuButton}>{row.description}</Button>
+    )
+  }
+}
+
+function createData(description, to, type) {
+  return {
+    description,
+    to,
+    type
+  };
+}
+
+const items = [
+  createData(
+    'Recetas',
+    '/buscar'
+  ),
+  createData(
+    'Categorías',
+    '/categorias'
+  ),
+  createData(
+    'Ingresar',
+    '/login'
+  ),
+  createData(
+    'Mi Perfil',
+    '/perfil'
+  ),
+  createData(
+    'Registrate',
+    '/registro',
+    'primary'
+  )
+]
