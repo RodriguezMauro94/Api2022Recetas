@@ -16,31 +16,28 @@ export default function NonnaCategories() {
             {
                 getRows(isMobile).map((row) => {
                     return (
-                        <div>
-                            <Grid container spacing={3}>
-                                {row.map((cell) => {
-                                    return (
-                                        <Grid item xs={3}>
-                                            <Card className={classes.card} sx={{ maxWidth: 345, minWidth: 150 }}>
-                                                <CardActionArea className={classes.action}>
-                                                    <CardMedia className={classes.media}
-                                                        component="img"
-                                                        height="140"
-                                                        image={cell.imageUrl}
-                                                        alt={cell.description}
-                                                    />
-                                                    <CardContent className={classes.content}>
-                                                        <Typography gutterBottom variant="h1" component="h1" className={ClassNames.font}>
-                                                            {cell.description}
-                                                        </Typography>
-                                                    </CardContent>
-                                                </CardActionArea>
-                                            </Card>
-                                        </Grid>
-                                    )
-                                })}
-                            </Grid>
-                        </div>
+                        <Grid container spacing={3}>
+                            {row.map((cell) => {
+                                return (
+                                    <Grid item xs={3}>
+                                        <Card className={classes.card}>
+                                            <CardActionArea className={classes.action}>
+                                                <CardMedia className={classes.media}
+                                                    component="img"
+                                                    image={cell.imageUrl}
+                                                    alt={cell.description}
+                                                />
+                                                <CardContent className={classes.content}>
+                                                    <Typography gutterBottom variant="h1" component="h1" className={ClassNames.font}>
+                                                        {cell.description}
+                                                    </Typography>
+                                                </CardContent>
+                                            </CardActionArea>
+                                        </Card>
+                                    </Grid>
+                                )
+                            })}
+                        </Grid>
                     )
                 })}
         </div>
@@ -49,7 +46,10 @@ export default function NonnaCategories() {
 
 const useStyles = makeStyles((theme) => ({
     card: {
-        position: "relative"
+        position: "relative",
+        maxWidth: 345,
+        minWidth: 150,
+        height: 150
     },
     action: {
         position: "relative"
@@ -66,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "transparent",
         color: "#ffffff",
         backgroundColor: "rgba(0,0,0,.24)"
+
     }
 }));
 
