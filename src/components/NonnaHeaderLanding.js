@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 import background from "../img/landing.png";
@@ -12,6 +12,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 
 export default function NonnaHeaderLanding() {
+  const theme = useTheme();
   const classes = useStyles();
 
   return (
@@ -49,11 +50,17 @@ export default function NonnaHeaderLanding() {
   );
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   landing: {
     backgroundImage: `url(${background})`,
-    paddingLeft: "200px",
-    paddingRight: "200px"
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: "20px",
+      paddingRight: "20px",
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: "200px",
+      paddingRight: "200px",
+    }
   },
   landingTitle: {
     marginTop: "85px",
@@ -74,7 +81,12 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     borderRadius: "20px",
     borderBottomColor: 'white',
-    marginBottom: "135px",
+    [theme.breakpoints.down('md')]: {
+      marginBottom: "50px"
+    },
+    [theme.breakpoints.up('md')]: {
+      marginBottom: "135px"
+    }
   }
 }));
 
