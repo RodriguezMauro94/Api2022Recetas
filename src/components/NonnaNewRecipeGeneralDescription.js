@@ -48,8 +48,7 @@ export default function NonnaNewRecipeGeneralDescription(props) {
                         <Button
                             onClick={() => uploadInputRef.current && uploadInputRef.current.click()}
                             color="inherit"
-                            variant="contained"
-                        >
+                            variant="contained">
                             Subir
                         </Button>
                     </Stack>
@@ -138,11 +137,6 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "20px",
     }
 }));
-
-
-
-
-
 
 
 function createData(key, value) {

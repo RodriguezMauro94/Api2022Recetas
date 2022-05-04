@@ -15,6 +15,7 @@ import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Button, TextField } from '@material-ui/core';
 
 function createData(ingredient, quantity) {
     return {
@@ -24,13 +25,11 @@ function createData(ingredient, quantity) {
 }
 
 const rows = [
-    createData('Cupcake', 305),
-    createData('Donut', 452),
-    createData('Eclair', 262),
-    createData('Frozen yoghurt', 159),
-    createData('Gingerbread', 356),
-    createData('Honeycomb', 408),
-    createData('Ice cream sandwich', 237)
+    createData('Sal', "50 gramos"),
+    createData('Pollo', "1 entero"),
+    createData('Aceite de maiz', "1 cucharada"),
+    createData('Pimienta negra', "A gusto"),
+    createData('Tomate', "2 en cuadraditos")
 ];
 
 const headCells = [
@@ -105,7 +104,7 @@ const EnhancedTableToolbar = (props) => {
                     variant="subtitle1"
                     component="div"
                 >
-                    {numSelected} selected
+                    {numSelected} ingredientes seleccionados
                 </Typography>
             ) : (
                 <Typography
@@ -121,6 +120,7 @@ const EnhancedTableToolbar = (props) => {
             {numSelected > 0 ? (
                 <Tooltip title="Eliminar">
                     <IconButton>
+                        {/*TODO: implementar eliminar item de la tabla*/}
                         <DeleteIcon />
                     </IconButton>
                 </Tooltip>
@@ -170,59 +170,74 @@ export default function NonnaIngredientsTable() {
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
     return (
-        <Box sx={{ width: '100%' }}>
-            <Paper sx={{ width: '100%', mb: 2 }}>
-                <EnhancedTableToolbar numSelected={selected.length} />
-                <TableContainer>
-                    <Table
-                        sx={{ minWidth: 750 }}
-                        aria-labelledby="tableTitle"
-                        size='small'>
-                        <EnhancedTableHead
-                            numSelected={selected.length}
-                            onSelectAllClick={handleSelectAllClick}
-                            rowCount={rows.length}
-                        />
-                        <TableBody>
-                            {rows.map((row, index) => {
-                                const isItemSelected = isSelected(row.ingredient);
-                                const labelId = `enhanced-table-checkbox-${index}`;
+        <>
+            <Box sx={{ width: '100%' }}>
+                <Paper sx={{ width: '100%', mb: 2 }}>
+                    <EnhancedTableToolbar numSelected={selected.length} />
+                    <TableContainer>
+                        <Table
+                            sx={{ minWidth: 750 }}
+                            aria-labelledby="tableTitle"
+                            size='small'>
+                            <EnhancedTableHead
+                                numSelected={selected.length}
+                                onSelectAllClick={handleSelectAllClick}
+                                rowCount={rows.length}
+                            />
+                            <TableBody>
+                                {rows.map((row, index) => {
+                                    const isItemSelected = isSelected(row.ingredient);
+                                    const labelId = `enhanced-table-checkbox-${index}`;
 
-                                return (
-                                    <TableRow
-                                        hover
-                                        onClick={(event) => handleClick(event, row.ingredient)}
-                                        role="checkbox"
-                                        aria-checked={isItemSelected}
-                                        tabIndex={-1}
-                                        key={row.ingredient}
-                                        selected={isItemSelected}
-                                    >
-                                        <TableCell padding="checkbox">
-                                            <Checkbox
-                                                color="primary"
-                                                checked={isItemSelected}
-                                                inputProps={{
-                                                    'aria-labelledby': labelId,
-                                                }}
-                                            />
-                                        </TableCell>
-                                        <TableCell
-                                            component="th"
-                                            id={labelId}
-                                            scope="row"
-                                            padding="none"
+                                    return (
+                                        <TableRow
+                                            hover
+                                            onClick={(event) => handleClick(event, row.ingredient)}
+                                            role="checkbox"
+                                            aria-checked={isItemSelected}
+                                            tabIndex={-1}
+                                            key={row.ingredient}
+                                            selected={isItemSelected}
                                         >
-                                            {row.ingredient}
-                                        </TableCell>
-                                        <TableCell align="right">{row.quantity}</TableCell>
-                                    </TableRow>
-                                );
-                            })}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Paper>
-        </Box>
+                                            <TableCell padding="checkbox">
+                                                <Checkbox
+                                                    color="primary"
+                                                    checked={isItemSelected}
+                                                    inputProps={{
+                                                        'aria-labelledby': labelId,
+                                                    }}
+                                                />
+                                            </TableCell>
+                                            <TableCell
+                                                component="th"
+                                                id={labelId}
+                                                scope="row"
+                                                padding="none"
+                                            >
+                                                {row.ingredient}
+                                            </TableCell>
+                                            <TableCell align="right">{row.quantity}</TableCell>
+                                        </TableRow>
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Paper>
+            </Box>
+            <div sx={{
+                display: "flex"
+            }}>
+                <TextField
+                    label="Ingrediente"
+                    variant="filled"
+                />
+                <TextField
+                    label="Cantidad"
+                    variant="filled"
+                />
+                <Button color="inherit">Agregar</Button>
+            </div>
+        </>
     );
 }
