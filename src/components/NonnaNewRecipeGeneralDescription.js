@@ -6,6 +6,7 @@ import { Button, Checkbox, FormControl, InputLabel, MenuItem, Rating, Select, St
 import vegan from "../img/vegan.png";
 import celiac from "../img/celiac.png";
 import { Box } from "@mui/system";
+import NonnaIngredientsTable from "./NonnaIngredientsTable";
 
 export default function NonnaNewRecipeGeneralDescription(props) {
     const classes = useStyles();
@@ -53,58 +54,56 @@ export default function NonnaNewRecipeGeneralDescription(props) {
                         </Button>
                     </Stack>
                 </div>
-                <div>
-                    <Stack spacing={2}>
-                        <TextField
-                            label="Título"
-                            variant="filled"
-                            maxRows={4}
-                            className={classes.review}
-                        />
-                        <TextField
-                            label="Descripción"
-                            multiline
-                            variant="filled"
-                            maxRows={4}
-                            className={classes.review}
-                        />
-                        <div className={classes.ratings}>
-                            <FormControl className={classes.rating}>
-                                <InputLabel id="difficulty-label">Dificultad</InputLabel>
-                                <Select
-                                    sx={{
-                                        minWidth: 150
-                                    }}
-                                    labelId="difficulty-label"
-                                    id="difficulty-select"
-                                    value={age}
-                                    label="Dificultad"
-                                    onChange={handleChange}>
-                                    {difficulties.map((difficulty) => {
-                                        return (
-                                            <MenuItem value={difficulty.key}>{difficulty.value}</MenuItem>
-                                        )
-                                    })}
-                                </Select>
-                            </FormControl>
-                            <div className={classes.rating}>
-                                <Typography variant="body1" className={classes.boldText}>
-                                    Apto vegano:
-                                </Typography>
-                                <Checkbox id="vegan-check" />
-                            </div>
-
-                            <div className={classes.rating}>
-                                <Typography variant="body1" className={classes.boldText}>
-                                    Apto celíaco:
-                                </Typography>
-                                <Checkbox id="celiac-check" />
-                            </div>
+                <Stack spacing={2}>
+                    <TextField
+                        label="Título"
+                        variant="filled"
+                        maxRows={4}
+                        className={classes.review}
+                    />
+                    <TextField
+                        label="Descripción"
+                        multiline
+                        variant="filled"
+                        maxRows={4}
+                        className={classes.review}
+                    />
+                    <div className={classes.ratings}>
+                        <FormControl className={classes.rating}>
+                            <InputLabel id="difficulty-label">Dificultad</InputLabel>
+                            <Select
+                                sx={{
+                                    minWidth: 150
+                                }}
+                                labelId="difficulty-label"
+                                id="difficulty-select"
+                                value={age}
+                                label="Dificultad"
+                                onChange={handleChange}>
+                                {difficulties.map((difficulty) => {
+                                    return (
+                                        <MenuItem value={difficulty.key}>{difficulty.value}</MenuItem>
+                                    )
+                                })}
+                            </Select>
+                        </FormControl>
+                        <div className={classes.rating}>
+                            <Typography variant="body1" className={classes.boldText}>
+                                Apto vegano:
+                            </Typography>
+                            <Checkbox id="vegan-check" />
                         </div>
-                    </Stack>
-                </div>
-            </div>
 
+                        <div className={classes.rating}>
+                            <Typography variant="body1" className={classes.boldText}>
+                                Apto celíaco:
+                            </Typography>
+                            <Checkbox id="celiac-check" />
+                        </div>
+                    </div>
+                </Stack>
+            </div>
+            <NonnaIngredientsTable />
         </div>
     );
 }
