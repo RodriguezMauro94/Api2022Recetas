@@ -128,8 +128,8 @@ const items = [
     '/buscar'
   ),
   createData(
-    'Categorías',
-    '/categorias'
+    'Subir receta',
+    '/nueva-receta'
   ),
   createData(
     'Ingresar',
