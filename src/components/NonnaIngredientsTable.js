@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -136,6 +137,7 @@ EnhancedTableToolbar.propTypes = {
 };
 
 export default function NonnaIngredientsTable() {
+    const classes = useStyles();
     const [selected, setSelected] = React.useState([]);
 
     const handleSelectAllClick = (event) => {
@@ -225,9 +227,7 @@ export default function NonnaIngredientsTable() {
                     </TableContainer>
                 </Paper>
             </Box>
-            <div sx={{
-                display: "flex"
-            }}>
+            <div className={classes.ratings}>
                 <TextField
                     label="Ingrediente"
                     variant="filled"
@@ -241,3 +241,10 @@ export default function NonnaIngredientsTable() {
         </>
     );
 }
+
+const useStyles = makeStyles((theme) => ({
+    ratings: {
+        display: "flex",
+        gap: 25
+    }
+}));

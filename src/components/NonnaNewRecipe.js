@@ -3,12 +3,11 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { TextField, useMediaQuery } from '@material-ui/core';
 import { Button, Checkbox, FormControl, InputLabel, MenuItem, Rating, Select, Stack } from '@mui/material';
-import vegan from "../img/vegan.png";
-import celiac from "../img/celiac.png";
 import { Box } from "@mui/system";
 import NonnaIngredientsTable from "./NonnaIngredientsTable";
+import NonnaStepCreator from "./NonnaStepCreator";
 
-export default function NonnaNewRecipeGeneralDescription(props) {
+export default function NonnaNewRecipe(props) {
     const classes = useStyles();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -86,6 +85,7 @@ export default function NonnaNewRecipeGeneralDescription(props) {
                                 })}
                             </Select>
                         </FormControl>
+
                         <div className={classes.rating}>
                             <Typography variant="body1" className={classes.boldText}>
                                 Apto vegano:
@@ -102,7 +102,12 @@ export default function NonnaNewRecipeGeneralDescription(props) {
                     </div>
                 </Stack>
             </div>
+
             <NonnaIngredientsTable />
+
+            <Typography variant="h5" className={classes.subtitle}>Pasos</Typography>
+            <NonnaStepCreator />
+            <Button color="inherit">Subir receta</Button>
         </div>
     );
 }
@@ -135,9 +140,11 @@ const useStyles = makeStyles((theme) => ({
     },
     review: {
         borderRadius: "20px",
+    },
+    subtitle: {
+        marginTop: "25px"
     }
 }));
-
 
 function createData(key, value) {
     return {
