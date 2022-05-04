@@ -1,15 +1,11 @@
-import React, { useRef } from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Typography, useMediaQuery } from '@material-ui/core';
-import { Button, Stack, TextField } from '@mui/material';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
+import { Stack } from '@mui/material';
 import { Box } from '@mui/system';
 
 export default function NonnaRecipeStep(props) {
     const classes = useStyles();
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-    const uploadInputRef = useRef(null);
 
     return (
         <div className={classes.root}>
