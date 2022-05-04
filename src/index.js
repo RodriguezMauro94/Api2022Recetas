@@ -10,6 +10,7 @@ import NonnaRegisterPage from './pages/NonnaRegisterPage';
 import NonnaLoginPage from './pages/NonnaLoginPage';
 import NonnaRecipePage from './pages/NonnaRecipePage';
 import NonnaSearchPage from './pages/NonnaSearchPage';
+import NonnaNewRecipePage from './pages/NonnaNewRecipePage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.render(
           <Route path='login' element={<NonnaLoginPage />} />
           <Route path='receta' element={<NonnaRecipePage />} />
           <Route path='buscar' element={<NonnaSearchPage />} />
+          <Route path='nueva-receta' element={<NonnaNewRecipePage />} />
 
           <Route path='*' element={<NonnaNotFound />} />
         </Route>
