@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { TextField, useMediaQuery } from '@material-ui/core';
-import { Button, Checkbox, FormControl, InputLabel, MenuItem, Rating, Select, Stack } from '@mui/material';
+import { Button, Checkbox, FormControl, InputLabel, MenuItem, Select, Stack } from '@mui/material';
 import { Box } from "@mui/system";
 import NonnaIngredientsTable from "./NonnaIngredientsTable";
 import NonnaStepCreator from "./NonnaStepCreator";

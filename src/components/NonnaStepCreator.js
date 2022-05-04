@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
-import { Button, Rating, Stack, TextField, Typography } from '@mui/material';
+import { Button, Stack, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 
 export default function NonnaStepCreator() {
@@ -75,13 +75,6 @@ const useStyles = makeStyles((theme) => ({
     },
     stepImage: {
         marginRight: "40px"
-    },
-    ratings: {
-        display: "flex",
-        gap: 25
-    },
-    boldText: {
-        fontWeight: 700
     },
     rating: {
         display: "flex",

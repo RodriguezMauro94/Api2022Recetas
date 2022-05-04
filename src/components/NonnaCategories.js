@@ -63,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         position: "relative",
-        backgroundColor: "transparent",
         color: "#ffffff",
         backgroundColor: "rgba(0,0,0,.24)"
 
@@ -132,7 +131,7 @@ function getRows(isMobile) {
     var breakBy = isMobile ? 2 : 4;
     var tempCategories = [...categories];
     var rows = [];
-    while (tempCategories.length != 0) {
+    while (tempCategories.length !== 0) {
         rows.push(tempCategories.splice(0, breakBy));
     }
     return rows;
