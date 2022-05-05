@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import NonnaLink from './NonnaLink';
 
 export default function NonnaRecipeCard(props) {
     return (
@@ -16,14 +16,14 @@ export default function NonnaRecipeCard(props) {
                 alt={props.title}
             />
             <CardContent>
-                <Link to='/receta' style={{ textDecoration: 'none' }}>
+                <NonnaLink to='/receta' style={{ textDecoration: 'none' }}>
                     <Typography gutterBottom variant="h5" component="div">
                         {props.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {props.description}
                     </Typography>
-                </Link>
+                </NonnaLink>
             </CardContent>
         </Card>
     );

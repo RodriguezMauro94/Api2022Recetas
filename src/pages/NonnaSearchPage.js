@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import NonnaLink from "../components/NonnaLink";
 import NonnaRecipeResume from "../components/NonnaRecipeResume";
 
 export default function NonnaSearchPage() {
     return (
         <>
-            <Link to='/receta' style={{ textDecoration: 'none' }}>
+            <NonnaLink to='/receta' style={{ textDecoration: 'none' }}>
                 <NonnaRecipeResume
                     image="pollo_teriyaki"
                     recipeTitle="Pollo teriyaki"
@@ -14,9 +14,9 @@ export default function NonnaSearchPage() {
                     dificulty="Fácil"
                     vegan={true}
                     celiac={true} />
-            </Link>
+            </NonnaLink>
 
-            <Link to='/receta' style={{ textDecoration: 'none' }}>
+            <NonnaLink to='/receta' style={{ textDecoration: 'none' }}>
                 <NonnaRecipeResume
                     image="pollo_teriyaki"
                     recipeTitle="Pollo tandori"
@@ -24,7 +24,7 @@ export default function NonnaSearchPage() {
                     rating="3"
                     dificulty="Difícil"
                     celiac={true} />
-            </Link>
+            </NonnaLink>
         </>
     );
 }

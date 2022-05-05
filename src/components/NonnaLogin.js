@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -12,6 +11,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { orange } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
+import NonnaLink from './NonnaLink';
 
 export default function NonnaLogin() {
   const handleSubmit = (event) => {
@@ -89,14 +89,14 @@ export default function NonnaLogin() {
             </LoginButton>
             <Grid container>
               <Grid item xs>
-                <Link href="/olvido-de-password" variant="body2">
+                <NonnaLink href="/olvido-de-password" variant="body2">
                   Olvidaste la contrasena?
-                </Link>
+                </NonnaLink>
               </Grid>
               <Grid item>
-                <Link href="/registro" variant="body2">
+                <NonnaLink href="/registro" variant="body2">
                   No tenés cuenta? Registrate!
-                </Link>
+                </NonnaLink>
               </Grid>
             </Grid>
             <Copyright sx={{ mt: 5 }} />
@@ -120,7 +120,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link to='/' color="inherit" > La Nonna      </Link>
+      <NonnaLink to='/' color="inherit" > La Nonna      </NonnaLink>
       {' '}
       {new Date().getFullYear()}
       {'.'}
