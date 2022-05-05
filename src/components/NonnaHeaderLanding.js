@@ -9,7 +9,7 @@ import { styled } from '@mui/material/styles';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from 'react-router-dom';
+import NonnaLink from './NonnaLink';
 
 export default function NonnaHeaderLanding() {
   const theme = useTheme();
@@ -36,9 +36,9 @@ export default function NonnaHeaderLanding() {
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton edge="end" >
-                    <Link to='/buscar' style={{ textDecoration: 'none' }}>
+                    <NonnaLink to='/buscar'>
                       <SearchIcon />
-                    </Link>
+                    </NonnaLink>
                   </IconButton>
                 </InputAdornment>
               ),
