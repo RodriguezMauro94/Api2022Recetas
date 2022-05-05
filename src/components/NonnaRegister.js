@@ -89,7 +89,7 @@ export default function NonnaRegister() {
                             fullWidth
                             id="cel"
                             name="cel"
-                            type="number"
+                            type="tel"
                             label="Teléfono"
                         />
                         <TextField
