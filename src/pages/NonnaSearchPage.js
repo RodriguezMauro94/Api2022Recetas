@@ -5,7 +5,7 @@ import NonnaRecipeResume from "../components/NonnaRecipeResume";
 export default function NonnaSearchPage() {
     return (
         <>
-            <NonnaLink to='/receta' style={{ textDecoration: 'none' }}>
+            <NonnaLink to='/receta'>
                 <NonnaRecipeResume
                     image="pollo_teriyaki"
                     recipeTitle="Pollo teriyaki"
@@ -16,7 +16,7 @@ export default function NonnaSearchPage() {
                     celiac={true} />
             </NonnaLink>
 
-            <NonnaLink to='/receta' style={{ textDecoration: 'none' }}>
+            <NonnaLink to='/receta'>
                 <NonnaRecipeResume
                     image="pollo_teriyaki"
                     recipeTitle="Pollo tandori"

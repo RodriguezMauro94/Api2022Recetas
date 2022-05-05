@@ -22,7 +22,7 @@ export default function NonnaAppBar() {
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <NonnaLink to='/' style={{ textDecoration: 'none' }}>
+          <NonnaLink to='/'>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
               <FaceIcon />
               <Typography variant="h6" >
@@ -44,7 +44,7 @@ export default function NonnaAppBar() {
                 <List>
                   {items.map((row) => (
                     <ListItem>
-                      <NonnaLink to={row.to} style={{ textDecoration: 'none' }}>
+                      <NonnaLink to={row.to}>
                         {getButton(row, classes)}
                       </NonnaLink>
                     </ListItem>
@@ -55,7 +55,7 @@ export default function NonnaAppBar() {
           ) : (
             <>
               {items.map((row) => (
-                <NonnaLink to={row.to} style={{ textDecoration: 'none' }}>
+                <NonnaLink to={row.to}>
                   {getButton(row, classes)}
                 </NonnaLink>
               ))}
