@@ -107,7 +107,10 @@ export default function NonnaNewRecipe(props) {
 
             <Typography variant="h5" className={classes.subtitle}>Pasos</Typography>
             <NonnaStepCreator />
-            <Button color="inherit">Subir receta</Button>
+            <Stack spacing={2} direction="row">
+                <Button color="inherit" variant="outlined">Guardar receta</Button>
+                <Button color="inherit" variant="contained">Subir receta</Button>
+            </Stack>
         </div>
     );
 }
@@ -171,18 +174,23 @@ const categories = [
 const difficulties = [
     createData(
         "easy",
-        "Fácil"
+        "1 - Fácil"
     ),
     createData(
         "medium",
-        "Media"
+        "2 - Media"
     ),
     createData(
         "hard",
-        "Difícil"
+        "3 - Difícil"
+    ),
+    createData(
+        "expert",
+        "4 - Experto"
     ),
     createData(
         "legendary",
-        "Nonna"
+        "5 - Nonna"
     )
+    
 ]
