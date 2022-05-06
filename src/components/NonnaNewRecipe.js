@@ -48,7 +48,7 @@ export default function NonnaNewRecipe(props) {
                             onClick={() => uploadInputRef.current && uploadInputRef.current.click()}
                             color="inherit"
                             variant="contained">
-                            Subir
+                            Subir Foto
                         </Button>
                     </Stack>
                 </div>
@@ -108,6 +108,7 @@ export default function NonnaNewRecipe(props) {
             <Typography variant="h5" className={classes.subtitle}>Pasos</Typography>
             <NonnaStepCreator />
             <Stack spacing={2} direction="row">
+            <Button color="inherit" variant="outlined" color="error">Eliminar receta</Button>
                 <Button color="inherit" variant="outlined">Guardar receta</Button>
                 <Button color="inherit" variant="contained">Subir receta</Button>
             </Stack>
