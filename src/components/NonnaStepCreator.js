@@ -37,7 +37,7 @@ export default function NonnaStepCreator() {
                         onClick={() => uploadInputRef.current && uploadInputRef.current.click()}
                         color="inherit"
                         variant="contained">
-                        Subir
+                        Subir Foto
                     </Button>
                 </Stack>
             </div>
