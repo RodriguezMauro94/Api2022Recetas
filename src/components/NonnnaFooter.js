@@ -4,6 +4,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import NonnaLink from "../components/NonnaLink";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
+
 
 function Copyright() {
   return (
@@ -15,6 +18,20 @@ function Copyright() {
     </Typography>
   );
 }
+const footers = [
+  {
+    title: 'Utiles',
+    description: ['Recetas para la cria', 'Recetas para uno', 'Bueno bonito y barato', 'Almorzando con Mirtha'],
+  },
+  {
+    title: 'Redes',
+    description: ['Twitter', 'Facebook', 'Instagram'],
+  },
+  {
+    title: 'Legal',
+    description: ['Aviso legal', 'Aviso de privacidad','Terminos y condiciones','Cookies pero no las que se comen'],
+  },
+];
 
 export default function StickyFooter() {
   return (
@@ -23,10 +40,8 @@ export default function StickyFooter() {
         display: 'flex',
         flexDirection: 'column',
         /* Esta altura representa el espacio blanco previo al footer, debemos buscar si hay algun estandar de accesibilidad */
-        minHeight: '100vh',
       }}
     >
-      <CssBaseline />
       <Box
         component="footer"
         sx={{
@@ -39,12 +54,35 @@ export default function StickyFooter() {
               : theme.palette.grey[800],
         }}
       >
-        <Container maxWidth="sm">
-          <Typography variant="body1">
-            Footer por ahora.
-          </Typography>
-          <Copyright />
-        </Container>
+        <Container
+        maxWidth="md"
+        component="footer"
+        sx={{
+          borderTop: (theme) => `1px solid ${theme.palette.divider}`,
+          mt: 8,
+          py: [3, 6],
+        }}
+      >
+        <Grid container spacing={4} justifyContent="space-evenly">
+          {footers.map((footer) => (
+            <Grid item xs={6} sm={3} key={footer.title}>
+              <Typography variant="h6" color="text.primary" gutterBottom>
+                {footer.title}
+              </Typography>
+              <ul>
+                {footer.description.map((item) => (
+                  <li key={item}>
+                    <Link href="#" variant="subtitle1" color="text.secondary">
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Grid>
+          ))}
+        </Grid>
+        <Copyright sx={{ mt: 5 }} />
+      </Container>
       </Box>
     </Box>
   );
