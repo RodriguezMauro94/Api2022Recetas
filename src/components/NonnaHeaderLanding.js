@@ -15,6 +15,11 @@ export default function NonnaHeaderLanding() {
   const theme = useTheme();
   const classes = useStyles();
 
+  const [search, setSearch] = React.useState('');
+  const handleChangeSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
   return (
     <div className={classes.landing}>
       <Stack spacing={2}>
@@ -32,14 +37,15 @@ export default function NonnaHeaderLanding() {
             variant="filled"
             label="Encontrá la receta que buscabas..."
             className={classes.searchInput}
+            onChange={handleChangeSearch}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <IconButton edge="end" >
-                    <NonnaLink to='/buscar'>
+                  <NonnaLink to={`/buscar/${search}`}>
+                    <IconButton edge="end" >
                       <SearchIcon />
-                    </NonnaLink>
-                  </IconButton>
+                    </IconButton>
+                  </NonnaLink>
                 </InputAdornment>
               ),
             }}

@@ -136,6 +136,7 @@ export default function NonnaFilterBar(props) {
                         <Checkbox id="celiac-check" />
                     </div>
 
+                    {/* TODO: Agregar Link aplicando filtros que redirija a la pagina de search con los parametros correspondientes */}
                     <Button>Aplicar filtros</Button>
                 </Box>
             </Modal>
