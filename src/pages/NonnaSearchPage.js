@@ -16,8 +16,8 @@ export default function NonnaSearchPage() {
                      recipeDescription={recipe.description}
                      rating={recipe.ratings}
                      difficulty={difficulties.find(difficulty => difficulty.key === recipe.difficulty).value}
-                     vegan={true}
-                     celiac={true} />
+                     vegan={recipe.vegan}
+                     celiac={recipe.celiac} />
              </NonnaLink>
             ))}
         </>
