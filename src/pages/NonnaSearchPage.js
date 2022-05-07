@@ -35,12 +35,7 @@ function filterRecipes(search) {
         return recipes;
     } else {
         return recipes.filter(
-            recipe => recipe.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+            recipe => recipe.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) || categories.find(category => category.id === recipe.category).description.toLocaleLowerCase().includes(search.toLocaleLowerCase())
         )
     }
-    /*
-    ||
-            recipe.category === 
-                categories.find(category => category.description.includes(search)).id
-    */
 }
