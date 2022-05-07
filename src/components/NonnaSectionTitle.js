@@ -29,11 +29,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginTop: "24px",
     marginBottom: "24px",
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       paddingLeft: "100px",
       paddingRight: "100px",
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       paddingLeft: "20px",
       paddingRight: "20px",
     },
