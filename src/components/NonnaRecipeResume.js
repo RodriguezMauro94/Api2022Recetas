@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { useMediaQuery } from '@material-ui/core';
+import { Box, useMediaQuery } from '@material-ui/core';
 import { Rating, Stack } from '@mui/material';
 import vegan from "../img/vegan.png";
 import celiac from "../img/celiac.png";
@@ -11,10 +11,22 @@ export default function NonnaRecipeResume(props) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
+    console.log(props.difficulty);
+
     return (
         <div className={classes.root}>
             <div className={classes.recipeImage}>
-                <img url={require(`../img/${props.image}.png`)} height="100px" width="100px" alt={props.recipeTitle} />
+                <Box
+                    component="img"
+                    sx={{
+                        height: 200,
+                        width: 200,
+                        maxHeight: { xs: 200, md: 200 },
+                        maxWidth: { xs: 200, md: 200 },
+                    }}
+                    alt={props.recipeTitle}
+                    src={props.image}
+                />
             </div>
             <div>
                 <Stack spacing={2}>
@@ -36,7 +48,7 @@ export default function NonnaRecipeResume(props) {
                                 Dificultad:
                             </Typography>
                             <Typography variant="body1">
-                                {props.dificulty}
+                                {props.difficulty}
                             </Typography>
                         </div>
 
@@ -74,7 +86,8 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         paddingLeft: "100px",
         paddingRight: "100px",
-        paddingBottom: "50px"
+        paddingBottom: "25px",
+        marginTop: "25px"
     },
     recipeImage: {
         marginRight: "40px"

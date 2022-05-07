@@ -1,45 +1,37 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import NonnaRecipeIngredients from "../components/NonnaRecipeIngredients";
 import NonnaSectionSubtitle from "../components/NonnaSectionSubtitle";
-import NonnaReview from "../components/NonnaReview";
 import NonnaCreateReview from "../components/NonnaCreateReview";
 import NonnaRecipeResume from "../components/NonnaRecipeResume";
 import NonnaRecipeStep from "../components/NonnaRecipeStep";
+import recipes from '../mocks/recipes.json';
+import difficulties from '../mocks/difficulties.json';
 
 export default function NonnaRecipePage() {
+  let params = useParams();
+  let recipe = recipes.find(recipe => recipe.id === params.id);
+
   return (
     <>
       <NonnaRecipeResume
-        image="pollo_teriyaki"
-        recipeTitle="Pollo teriyaki"
-        recipeDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
-        rating="4"
-        dificulty="Fácil"
-        vegan={true}
-        celiac={true} />
-      <NonnaRecipeIngredients />
-      <NonnaSectionSubtitle sectionTitle="Cómo preparar Pollo teriyaki" />
-      <NonnaRecipeStep
-        stepTitle="Preparar el pollo"
-        stepDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
-        stepImage="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
-      />
-      <NonnaRecipeStep
-        stepTitle="Cocinar en cacerola"
-        stepDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
-        stepImage="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
-      />
-      <NonnaSectionSubtitle sectionTitle="Reseñas" />
-      <NonnaReview
-        reviewUser="Vito Corleone"
-        reviewRating="4"
-        reviewDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
-      />
-      <NonnaReview
-        reviewUser="Knight of Ni"
-        reviewRating="3"
-        reviewDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
-      />
+        image={recipe.urlImage}
+        recipeTitle={recipe.name}
+        recipeDescription={recipe.description}
+        rating={recipe.ratings}
+        difficulty={difficulties.find(difficulty => difficulty.key === recipe.difficulty).value}
+        vegan={recipe.vegan}
+        celiac={recipe.celiac} />
+      <NonnaRecipeIngredients id={recipe.id} />
+      <NonnaSectionSubtitle sectionTitle={`Cómo preparar ${recipe.name}`} />
+      {recipe.steps.map((step) => (
+        <NonnaRecipeStep
+          stepTitle={step.title}
+          stepDescription={step.description}
+          stepImage={step.urlImage}
+        />
+      ))}
+      <NonnaSectionSubtitle sectionTitle="¿Qué te pareció esta receta?" />
       <NonnaCreateReview />
     </>
   );

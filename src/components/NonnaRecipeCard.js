@@ -16,7 +16,7 @@ export default function NonnaRecipeCard(props) {
                 alt={props.title}
             />
             <CardContent>
-                <NonnaLink to='/receta'>
+                <NonnaLink to={`/receta/${props.id}`}>
                     <Typography gutterBottom variant="h5" component="div">
                         {props.title}
                     </Typography>

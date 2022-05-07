@@ -1,0 +1,22 @@
+[
+    {
+        "key": "easy",
+        "value": "Fácil"
+    },
+    {
+        "key": "medium",
+        "value": "Media"
+    },
+    {
+        "key": "hard",
+        "value": "Difícil"
+    },
+    {
+        "key": "expert",
+        "value": "Experto"
+    },
+    {
+        "key": "legendary",
+        "value": "Nonna"
+    }
+]

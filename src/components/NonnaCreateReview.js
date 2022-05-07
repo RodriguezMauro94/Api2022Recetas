@@ -9,19 +9,10 @@ export default function NonnaCreateReview() {
     const classes = useStyles();
 
     return (
-        <Stack>
-            <TextField
-                label="Escriba su reseña"
-                multiline
-                variant="filled"
-                maxRows={4}
-                className={classes.review}
-            />
-            <div className={classes.row}>
-                <Rating />
-                <PrimaryButton>Enviar reseña</PrimaryButton>
-            </div>
-        </Stack>
+        <div className={classes.row}>
+            <Rating />
+            <PrimaryButton>Enviar reseña</PrimaryButton>
+        </div>
     );
 }
 
