@@ -10,7 +10,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
+    <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <NonnaLink to='/'>La Nonna </NonnaLink>
       {new Date().getFullYear()}
