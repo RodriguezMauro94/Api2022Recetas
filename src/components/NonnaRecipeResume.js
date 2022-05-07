@@ -1,14 +1,12 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { Box, useMediaQuery } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { Stack } from '@mui/material';
 import NonnaRatings from './NonnaRatings'
 
 export default function NonnaRecipeResume(props) {
     const classes = useStyles();
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <div className={classes.root}>
@@ -54,7 +52,12 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "25px"
     },
     recipeImage: {
-        marginRight: "40px"
+        [theme.breakpoints.up('md')]: {
+            marginRight: "40px"
+        },
+        [theme.breakpoints.down('md')]: {
+            marginRight: "10px"
+        },
     },
     ratings: {
         display: "flex",
@@ -68,10 +71,18 @@ const useStyles = makeStyles((theme) => ({
         gap: 5
     },
     imageBox: {
-        height: 200,
-        width: 200,
-        maxHeight: { xs: 200, md: 200 },
-        maxWidth: { xs: 200, md: 200 }
+        [theme.breakpoints.up('md')]: {
+            height: 200,
+            width: 200,
+            maxHeight: { xs: 200, md: 200 },
+            maxWidth: { xs: 200, md: 200 }
+        },
+        [theme.breakpoints.down('md')]: {
+            height: 50,
+            width: 50,
+            maxHeight: { xs: 50, md: 50 },
+            maxWidth: { xs: 50, md: 50 }
+        },
     },
     imageBoxSmall: {
         height: 23,
