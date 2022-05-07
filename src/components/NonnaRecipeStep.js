@@ -13,12 +13,7 @@ export default function NonnaRecipeStep(props) {
                 <Stack spacing={1}>
                     <Box
                         component="img"
-                        sx={{
-                            height: 200,
-                            width: 200,
-                            maxHeight: { xs: 200, md: 200 },
-                            maxWidth: { xs: 200, md: 200 },
-                        }}
+                        className={classes.imageBox}
                         alt="Foto de portada"
                         src={props.stepImage}
                     />
@@ -43,8 +38,14 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         display: "flex",
         paddingBottom: "20px",
-        paddingLeft: "100px",
-        paddingRight: "100px",
+        [theme.breakpoints.up('md')]: {
+            paddingLeft: "100px",
+            paddingRight: "100px",
+        },
+        [theme.breakpoints.down('md')]: {
+            paddingLeft: "20px",
+            paddingRight: "20px",
+        },
         marginTop: "10px"
     },
     stepImage: {
@@ -53,5 +54,19 @@ const useStyles = makeStyles((theme) => ({
     rating: {
         display: "flex",
         gap: 5
+    },
+    imageBox: {
+        [theme.breakpoints.up('md')]: {
+            height: 200,
+            width: 200,
+            maxHeight: { xs: 200, md: 200 },
+            maxWidth: { xs: 200, md: 200 }
+        },
+        [theme.breakpoints.down('md')]: {
+            height: 50,
+            width: 50,
+            maxHeight: { xs: 50, md: 50 },
+            maxWidth: { xs: 50, md: 50 }
+        },
     },
 }));

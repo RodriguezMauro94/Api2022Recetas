@@ -22,8 +22,14 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         marginTop: "15px",
         marginBottom: "10px",
-        paddingLeft: "100px",
-        paddingRight: "100px",
+        [theme.breakpoints.up('md')]: {
+            paddingLeft: "100px",
+            paddingRight: "100px",
+        },
+        [theme.breakpoints.down('md')]: {
+            paddingLeft: "20px",
+            paddingRight: "20px",
+        },
         gap: "15px"
     },
     review: {
