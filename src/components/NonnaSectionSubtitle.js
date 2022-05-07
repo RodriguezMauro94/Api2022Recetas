@@ -21,9 +21,15 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         marginTop: "24px",
         marginBottom: "5px",
-        paddingLeft: "100px",
-        paddingRight: "100px",
-        gap: "25px"
+        [theme.breakpoints.up('sm')]: {
+            paddingLeft: "100px",
+            paddingRight: "100px",
+        },
+        [theme.breakpoints.down('sm')]: {
+            paddingLeft: "20px",
+            paddingRight: "20px",
+        },
+        gap: "5px"
     },
     sectionDivider: {
         backgroundColor: "#FF8A00",
