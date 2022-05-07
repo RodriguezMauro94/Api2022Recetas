@@ -7,24 +7,24 @@ import NonnaLink from './NonnaLink';
 
 export default function NonnaRecipeCard(props) {
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                component="img"
-                height="140"
-                width="140"
-                image={props.imageUrl}
-                alt={props.title}
-            />
-            <CardContent>
-                <NonnaLink to={`/receta/${props.id}`}>
+        <NonnaLink to={`/receta/${props.id}`}>
+            <Card sx={{ maxWidth: 345 }}>
+                <CardMedia
+                    component="img"
+                    height="140"
+                    width="140"
+                    image={props.imageUrl}
+                    alt={props.title}
+                />
+                <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {props.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {props.description}
                     </Typography>
-                </NonnaLink>
-            </CardContent>
-        </Card>
+                </CardContent>
+            </Card>
+        </NonnaLink>
     );
 }
