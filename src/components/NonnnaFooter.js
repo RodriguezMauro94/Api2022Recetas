@@ -7,6 +7,9 @@ import NonnaLink from "../components/NonnaLink";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 function Copyright() {
   return (
@@ -20,20 +23,20 @@ function Copyright() {
 }
 const footers = [
   {
-    title: 'Utiles',
-    description: ['Recetas para la cria', 'Recetas para uno', 'Bueno bonito y barato', 'Almorzando con Mirtha'],
-  },
-  {
-    title: 'Nosotrs',
+    title: 'Nosotros',
     description: ['Quienes Somos', 'Mision', 'Vision', 'FAQ'],
   },
   {
-    title: 'Redes',
-    description: ['Twitter', 'Facebook', 'Instagram'],
+    title: 'Curiosidades',
+    description: ['Recetas para la cria', 'Recetas para uno', 'Bueno bonito y barato', 'Almorzando con Mirtha'],
   },
   {
     title: 'Legal',
-    description: ['Aviso legal', 'Aviso de privacidad','Terminos y condiciones','Cookies pero no las que se comen'],
+    description: ['Aviso legal', 'Aviso de privacidad','Terminos y condiciones','Cookies (NOT FOOD)'],
+  },
+  {
+    title: 'Redes',
+    description: [<TwitterIcon></TwitterIcon> ,<FacebookIcon></FacebookIcon>,<InstagramIcon></InstagramIcon>],
   },
 ];
 
