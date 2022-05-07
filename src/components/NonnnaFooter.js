@@ -24,6 +24,10 @@ const footers = [
     description: ['Recetas para la cria', 'Recetas para uno', 'Bueno bonito y barato', 'Almorzando con Mirtha'],
   },
   {
+    title: 'Nosotrs',
+    description: ['Quienes Somos', 'Mision', 'Vision', 'FAQ'],
+  },
+  {
     title: 'Redes',
     description: ['Twitter', 'Facebook', 'Instagram'],
   },
