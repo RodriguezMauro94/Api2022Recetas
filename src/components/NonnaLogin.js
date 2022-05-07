@@ -90,7 +90,7 @@ export default function NonnaLogin() {
             <Grid container>
               <Grid item xs>
                 <NonnaLink to="/olvido-de-password">
-                  Olvidaste la contrasena?
+                  Olvidaste la contraseña?
                 </NonnaLink>
               </Grid>
               <Grid item>

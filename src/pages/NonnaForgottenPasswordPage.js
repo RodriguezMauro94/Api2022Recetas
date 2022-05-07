@@ -1,10 +1,10 @@
 import React from "react";
-import NonnaRecuperoPass from "../components/NonnaRecuperoPass";
+import NonnaResetPassword from "../components/NonnaResetPassword";
 
 export default function NonnaForgottenPasswordPage() {
   return (
     <>
-        <NonnaRecuperoPass />
+        <NonnaResetPassword />
     </>
   );
 }

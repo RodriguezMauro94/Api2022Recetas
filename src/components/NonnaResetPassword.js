@@ -12,7 +12,7 @@ import { orange } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import NonnaLink from './NonnaLink';
 
-export default function NonnaRecuperoPass() {
+export default function NonnaResetPassword() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
