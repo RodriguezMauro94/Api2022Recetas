@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid, useMediaQuery } from '@material-ui/core';
 import { ClassNames } from '@emotion/react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import categories from '../mocks/categories.json'
 
 export default function NonnaCategories() {
     const classes = useStyles();
@@ -24,7 +25,7 @@ export default function NonnaCategories() {
                                             <CardActionArea className={classes.action}>
                                                 <CardMedia className={classes.media}
                                                     component="img"
-                                                    image={cell.imageUrl}
+                                                    image={cell.urlImage}
                                                     alt={cell.description}
                                                 />
                                                 <CardContent className={classes.content}>
@@ -68,64 +69,6 @@ const useStyles = makeStyles((theme) => ({
 
     }
 }));
-
-function createData(description, imageUrl) {
-    return {
-        description,
-        imageUrl
-    };
-}
-
-const categories = [
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    ),
-    createData(
-        'Pollo',
-        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-    )
-]
 
 function getRows(isMobile) {
     var breakBy = isMobile ? 2 : 4;
