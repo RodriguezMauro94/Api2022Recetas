@@ -57,7 +57,17 @@ export default function NonnaRecipeResume(props) {
                                 <Typography variant="body1" className={classes.boldText}>
                                     Apto vegano:
                                 </Typography>
-                                <img url={vegan} width="23px" height="23px" alt="Apto vegano" />
+                                <Box
+                                    component="img"
+                                    sx={{
+                                        height: 23,
+                                        width: 23,
+                                        maxHeight: { xs: 23, md: 23 },
+                                        maxWidth: { xs: 23, md: 23 },
+                                    }}
+                                    alt="Apto vegano"
+                                    src={vegan}
+                                />
                             </div>
                             : <>
                             </>
@@ -68,7 +78,17 @@ export default function NonnaRecipeResume(props) {
                                 <Typography variant="body1" className={classes.boldText}>
                                     Apto celíaco:
                                 </Typography>
-                                <img url={celiac} width="23px" height="23px" alt="Apto celíaco" />
+                                <Box
+                                    component="img"
+                                    sx={{
+                                        height: 23,
+                                        width: 23,
+                                        maxHeight: { xs: 23, md: 23 },
+                                        maxWidth: { xs: 23, md: 23 },
+                                    }}
+                                    alt="Apto celíaco"
+                                    src={celiac}
+                                />
                             </div>
                             : <>
                             </>
