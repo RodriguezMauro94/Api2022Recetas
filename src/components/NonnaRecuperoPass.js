@@ -64,13 +64,13 @@ export default function NonnaRecuperoPass() {
               autoComplete="email"
               autoFocus
             />
-            <Button
+            <MailButton
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}>
               Enviar Mail
-            </Button>
+            </MailButton>
             <Copyright sx={{ mt: 5 }} />
           </Box>
         </Box>
@@ -79,7 +79,7 @@ export default function NonnaRecuperoPass() {
   );
 }
 
-const Button = styled(Button)(({ theme }) => ({
+const MailButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(orange[500]),
   backgroundColor: orange[500],
   '&:hover': {
