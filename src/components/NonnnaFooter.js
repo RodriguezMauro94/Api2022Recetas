@@ -6,7 +6,7 @@ import Container from '@mui/material/Container';
 import NonnaLink from "../components/NonnaLink";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 function Copyright() {
   return (
@@ -37,27 +37,11 @@ const footers = [
   },
 ];
 
+
 export default function StickyFooter() {
+  const theme = useTheme();
+  const classes = useStyles();
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        /* Esta altura representa el espacio blanco previo al footer, debemos buscar si hay algun estandar de accesibilidad */
-      }}
-    >
-      <Box
-        component="footer"
-        sx={{
-          py: 3,
-          px: 2,
-          mt: 'auto',
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
-        }}
-      >
         <Container
         maxWidth="md"
         component="footer"
@@ -67,16 +51,17 @@ export default function StickyFooter() {
           py: [3, 6],
         }}
       >
+        <CssBaseline/>
         <Grid container spacing={4} justifyContent="space-evenly">
           {footers.map((footer) => (
             <Grid item xs={6} sm={3} key={footer.title}>
               <Typography variant="h6" color="text.primary" gutterBottom>
                 {footer.title}
               </Typography>
-              <ul>
+              <ul className={classes.list}>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href="#" variant="subtitle1" color="text.secondary">
+                    <Link href="#" variant="subtitle1" color="text.secondary" underline='none'>
                       {item}
                     </Link>
                   </li>
@@ -87,7 +72,12 @@ export default function StickyFooter() {
         </Grid>
         <Copyright sx={{ mt: 5 }} />
       </Container>
-      </Box>
-    </Box>
   );
 }
+const useStyles = makeStyles((theme) => ({
+  list: {
+    margin:"0",
+    padding:"0",
+    listStyle:"none"
+    }
+}));
