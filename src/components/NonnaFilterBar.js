@@ -159,8 +159,14 @@ const styleModal = {
 const useStyles = makeStyles((theme) => ({
     root: {
         marginTop: "25px",
-        paddingLeft: "100px",
-        paddingRight: "100px",
+        [theme.breakpoints.up('md')]: {
+            paddingLeft: "100px",
+            paddingRight: "100px",
+        },
+        [theme.breakpoints.down('md')]: {
+            paddingLeft: "20px",
+            paddingRight: "20px",
+        },
     },
     divider: {
         flexGrow: 1

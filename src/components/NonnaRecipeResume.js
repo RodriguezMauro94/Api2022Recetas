@@ -2,28 +2,20 @@ import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { Box, useMediaQuery } from '@material-ui/core';
-import { Rating, Stack } from '@mui/material';
-import vegan from "../img/vegan.png";
-import celiac from "../img/celiac.png";
+import { Stack } from '@mui/material';
+import NonnaRatings from './NonnaRatings'
 
 export default function NonnaRecipeResume(props) {
     const classes = useStyles();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-    console.log(props.difficulty);
-
     return (
         <div className={classes.root}>
             <div className={classes.recipeImage}>
                 <Box
                     component="img"
-                    sx={{
-                        height: 200,
-                        width: 200,
-                        maxHeight: { xs: 200, md: 200 },
-                        maxWidth: { xs: 200, md: 200 },
-                    }}
+                    className={classes.imageBox}
                     alt={props.recipeTitle}
                     src={props.image}
                 />
@@ -36,64 +28,10 @@ export default function NonnaRecipeResume(props) {
                     <Typography className={classes.landingTitle} variant="subtitle1">
                         {props.recipeDescription}
                     </Typography>
-                    <div className={classes.ratings}>
-                        <div className={classes.rating}>
-                            <Typography variant="body1" className={classes.boldText}>
-                                Calificación:
-                            </Typography>
-                            <Rating value={props.rating} readOnly></Rating>
-                        </div>
-                        <div className={classes.rating}>
-                            <Typography variant="body1" className={classes.boldText}>
-                                Dificultad:
-                            </Typography>
-                            <Typography variant="body1">
-                                {props.difficulty}
-                            </Typography>
-                        </div>
-
-                        {props.vegan === true ?
-                            <div className={classes.rating}>
-                                <Typography variant="body1" className={classes.boldText}>
-                                    Apto vegano:
-                                </Typography>
-                                <Box
-                                    component="img"
-                                    sx={{
-                                        height: 23,
-                                        width: 23,
-                                        maxHeight: { xs: 23, md: 23 },
-                                        maxWidth: { xs: 23, md: 23 },
-                                    }}
-                                    alt="Apto vegano"
-                                    src={vegan}
-                                />
-                            </div>
-                            : <>
-                            </>
-                        }
-
-                        {props.celiac === true ?
-                            <div className={classes.rating}>
-                                <Typography variant="body1" className={classes.boldText}>
-                                    Apto celíaco:
-                                </Typography>
-                                <Box
-                                    component="img"
-                                    sx={{
-                                        height: 23,
-                                        width: 23,
-                                        maxHeight: { xs: 23, md: 23 },
-                                        maxWidth: { xs: 23, md: 23 },
-                                    }}
-                                    alt="Apto celíaco"
-                                    src={celiac}
-                                />
-                            </div>
-                            : <>
-                            </>
-                        }
-                    </div>
+                    <NonnaRatings rating={props.rating}
+                        difficulty={props.difficulty}
+                        vegan={props.vegan}
+                        celiac={props.celiac} />
                 </Stack>
             </div>
         </div>
@@ -104,8 +42,14 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         display: "flex",
-        paddingLeft: "100px",
-        paddingRight: "100px",
+        [theme.breakpoints.up('md')]: {
+            paddingLeft: "100px",
+            paddingRight: "100px",
+        },
+        [theme.breakpoints.down('md')]: {
+            paddingLeft: "20px",
+            paddingRight: "20px",
+        },
         paddingBottom: "25px",
         marginTop: "25px"
     },
@@ -123,4 +67,16 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         gap: 5
     },
+    imageBox: {
+        height: 200,
+        width: 200,
+        maxHeight: { xs: 200, md: 200 },
+        maxWidth: { xs: 200, md: 200 }
+    },
+    imageBoxSmall: {
+        height: 23,
+        width: 23,
+        maxHeight: { xs: 23, md: 23 },
+        maxWidth: { xs: 23, md: 23 },
+    }
 }));
