@@ -15,9 +15,6 @@ export default function NonnaReview(props) {
                 <Rating value={props.reviewRating} readOnly></Rating>
                 <div className={classes.sectionDivider}></div>
             </div>
-            <Typography variant="body1" className={classes.reviewDescription}>
-                {props.reviewDescription}
-            </Typography>
         </Stack>
     );
 }
@@ -37,9 +34,5 @@ const useStyles = makeStyles((theme) => ({
         width: "25px",
         height: "2px",
         flexGrow: 1,
-    },
-    reviewDescription: {
-        paddingLeft: "150px",
-        paddingRight: "100px",
     }
 }));

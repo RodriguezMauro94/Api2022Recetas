@@ -6,6 +6,7 @@ import { Button, Checkbox, FormControl, InputLabel, MenuItem, Select, Stack } fr
 import { Box } from "@mui/system";
 import NonnaIngredientsTable from "./NonnaIngredientsTable";
 import NonnaStepCreator from "./NonnaStepCreator";
+import difficulties from '../mocks/difficulties.json'
 
 export default function NonnaNewRecipe(props) {
     const classes = useStyles();
@@ -149,49 +150,3 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "25px"
     }
 }));
-
-function createData(key, value) {
-    return {
-        key,
-        value
-    };
-}
-
-const categories = [
-    createData(
-        "chicken",
-        "Pollo"
-    ),
-    createData(
-        "meat",
-        "Carne de Res"
-    ),
-    createData(
-        "salad",
-        "Ensalada"
-    ),
-]
-
-const difficulties = [
-    createData(
-        "easy",
-        "1 - Fácil"
-    ),
-    createData(
-        "medium",
-        "2 - Media"
-    ),
-    createData(
-        "hard",
-        "3 - Difícil"
-    ),
-    createData(
-        "expert",
-        "4 - Experto"
-    ),
-    createData(
-        "legendary",
-        "5 - Nonna"
-    )
-    
-]

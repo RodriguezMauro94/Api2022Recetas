@@ -1,22 +1,22 @@
 [
     {
         "key": "easy",
-        "value": "Fácil"
+        "value": "1 - Fácil"
     },
     {
         "key": "medium",
-        "value": "Media"
+        "value": "2 - Media"
     },
     {
         "key": "hard",
-        "value": "Difícil"
+        "value": "3 - Difícil"
     },
     {
         "key": "expert",
-        "value": "Experto"
+        "value": "4 - Experto"
     },
     {
         "key": "legendary",
-        "value": "Nonna"
+        "value": "5 - Nonna"
     }
 ]

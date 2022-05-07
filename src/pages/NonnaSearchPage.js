@@ -3,11 +3,12 @@ import NonnaLink from "../components/NonnaLink";
 import NonnaRecipeResume from "../components/NonnaRecipeResume";
 import recipes from '../mocks/recipes.json';
 import difficulties from '../mocks/difficulties.json';
+import NonnaFilterBar from "../components/NonnaFilterBar";
 
 export default function NonnaSearchPage() {
     return (
         <>
-            <h1>Recetas</h1>
+            <NonnaFilterBar />
             {recipes.map((recipe) => (
                  <NonnaLink to={`/receta/${recipe.id}`}>
                  <NonnaRecipeResume

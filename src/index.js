@@ -21,7 +21,14 @@ ReactDOM.render(
           <Route path='registro' element={<NonnaRegisterPage />} />
           <Route path='login' element={<NonnaLoginPage />} />
           <Route path='receta/:id' element={<NonnaRecipePage />} />
-          <Route path='buscar' element={<NonnaSearchPage />} />
+          <Route path='buscar' element={<NonnaSearchPage />}>
+            <Route path=':search' element={<NonnaSearchPage />}>
+              <Route path=':order-by' element={<NonnaSearchPage />}>
+                <Route path=':filters' element={<NonnaSearchPage />}>
+                </Route>
+              </Route>
+            </Route>
+          </Route>
           <Route path='nueva-receta' element={<NonnaNewRecipePage />} />
 
           <Route path='*' element={<NonnaNotFound />} />
