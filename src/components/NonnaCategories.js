@@ -64,10 +64,11 @@ const useStyles = makeStyles((theme) => ({
         position: "relative",
         maxWidth: 345,
         minWidth: 150,
-        height: 140
+        height: 150
     },
     action: {
-        position: "relative"
+        position: "relative",
+        height: 150
     },
     media: {
         position: "absolute",
