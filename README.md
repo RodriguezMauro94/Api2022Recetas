@@ -182,7 +182,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contacto
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Mauro Rodriguez - rodriguezmauro1994@gmail.com
+Franco Benito - francobenito@protonmail.com
 
 Project Link: [https://github.com/RodriguezMauro94/Api2022Recetas](https://github.com/RodriguezMauro94/Api2022Recetas)
 
