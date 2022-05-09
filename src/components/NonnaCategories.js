@@ -17,7 +17,7 @@ export default function NonnaCategories() {
             {
                 getRows(isMobile).map((row) => {
                     return (
-                        <Grid container spacing={3}>
+                        <Grid container spacing={2}>
                             {row.map((cell) => {
                                 return (
                                     <Grid item xs={6} md={3}>
