@@ -7,6 +7,20 @@ import { CardActionArea, Grid, useMediaQuery } from '@material-ui/core';
 import { ClassNames } from '@emotion/react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import categories from '../mocks/categories.json'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme();
+
+theme.typography.h3 = {
+  fontSize: '1.2rem',
+  '@media (min-width:600px)': {
+    fontSize: '1.5rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2.4rem',
+  },
+};
+
 
 export default function NonnaCategories() {
     const classes = useStyles();
@@ -29,7 +43,7 @@ export default function NonnaCategories() {
                                                     alt={cell.description}
                                                 />
                                                 <CardContent className={classes.content}>
-                                                    <Typography gutterBottom variant="h1" component="h1" className={ClassNames.font}>
+                                                    <Typography gutterBottom variant="h2" component="h2" className={classes.font}>
                                                         {cell.description}
                                                     </Typography>
                                                 </CardContent>
@@ -50,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
         position: "relative",
         maxWidth: 345,
         minWidth: 150,
-        height: 150
+        height: 140
     },
     action: {
         position: "relative"
@@ -67,6 +81,9 @@ const useStyles = makeStyles((theme) => ({
         color: "#ffffff",
         backgroundColor: "rgba(0,0,0,.24)"
 
+    },
+    font: {
+        textAlign: "center"
     }
 }));
 
