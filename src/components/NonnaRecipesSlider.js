@@ -2,9 +2,8 @@ import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableRow } from '@material-ui/core';
 import NonnaRecipeCard from './NonnaRecipeCard';
-import recipes from '../mocks/recipes.json';
 
-export default function NonnaRecipesSlider() {
+export default function NonnaRecipesSlider(props) {
     const classes = useStyles();
 
     return (
@@ -12,7 +11,7 @@ export default function NonnaRecipesSlider() {
             <Table sx={{ minWidth: 700 }} aria-label="Recetas destacadas">
                 <TableBody>
                     <TableRow>
-                    {recipes.map((row) => (
+                    {props.data().map((row) => (
                         <TableCell className={classes.cell} scope="row">
                             <NonnaRecipeCard id={row.id} imageUrl={row.urlImage} title={row.name} description={row.description} />
                         </TableCell>

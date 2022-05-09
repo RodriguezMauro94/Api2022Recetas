@@ -137,7 +137,7 @@ const items = [
   ),
   createData(
     'Mi Perfil',
-    '/perfil'
+    '/mi-perfil'
   ),
   createData(
     'Registrate',

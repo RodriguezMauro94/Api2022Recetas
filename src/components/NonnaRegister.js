@@ -63,16 +63,8 @@ export default function NonnaRegister() {
                             fullWidth
                             id="name"
                             name="name"
-                            label="Nombre"
+                            label="Nombre y apellido"
                             autoFocus
-                        />
-                        <TextField
-                            margin="normal"
-                            required
-                            fullWidth
-                            id="lastName"
-                            name="lastName"
-                            label="Apellido"
                         />
                         <TextField
                             margin="normal"

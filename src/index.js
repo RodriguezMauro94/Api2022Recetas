@@ -12,6 +12,7 @@ import NonnaRecipePage from './pages/NonnaRecipePage';
 import NonnaSearchPage from './pages/NonnaSearchPage';
 import NonnaNewRecipePage from './pages/NonnaNewRecipePage';
 import NonnaForgottenPasswordPage from './pages/NonnaForgottenPasswordPage';
+import NonnaMyProfilePage from './pages/NonnaMyProfilePage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -32,6 +33,7 @@ ReactDOM.render(
           </Route>
           <Route path='nueva-receta' element={<NonnaNewRecipePage />} />
           <Route path='olvido-de-password' element={<NonnaForgottenPasswordPage />} />
+          <Route path='mi-perfil' element={<NonnaMyProfilePage />} />
 
           <Route path='*' element={<NonnaNotFound />} />
         </Route>
