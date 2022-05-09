@@ -20,7 +20,7 @@ export default function NonnaCategories() {
                         <Grid container spacing={3}>
                             {row.map((cell) => {
                                 return (
-                                    <Grid item xs={3}>
+                                    <Grid item xs={6} md={3}>
                                         <Card className={classes.card}>
                                             <CardActionArea className={classes.action}>
                                                 <CardMedia className={classes.media}
