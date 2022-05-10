@@ -4,22 +4,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid, useMediaQuery } from '@material-ui/core';
-import { ClassNames } from '@emotion/react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import categories from '../mocks/categories.json'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {ThemeProvider } from '@mui/material/styles';
+import { Container } from '@mui/material';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
-const theme = createTheme();
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
 
-theme.typography.h3 = {
-  fontSize: '1.2rem',
-  '@media (min-width:600px)': {
-    fontSize: '1.5rem',
-  },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2.4rem',
-  },
-};
 
 
 export default function NonnaCategories() {
@@ -31,28 +24,32 @@ export default function NonnaCategories() {
             {
                 getRows(isMobile).map((row) => {
                     return (
-                        <Grid container spacing={2}>
-                            {row.map((cell) => {
-                                return (
-                                    <Grid item xs={6} md={3}>
-                                        <Card className={classes.card}>
-                                            <CardActionArea className={classes.action}>
-                                                <CardMedia className={classes.media}
-                                                    component="img"
-                                                    image={cell.urlImage}
-                                                    alt={cell.description}
-                                                />
-                                                <CardContent className={classes.content}>
-                                                    <Typography gutterBottom variant="h2" component="h2" className={classes.font}>
-                                                        {cell.description}
-                                                    </Typography>
-                                                </CardContent>
-                                            </CardActionArea>
-                                        </Card>
-                                    </Grid>
-                                )
-                            })}
-                        </Grid>
+                        <Container>
+                            <Grid container spacing={2}>
+                                {row.map((cell) => {
+                                    return (
+                                        <Grid item xs={6} md={3}>
+                                            <Card className={classes.card}>
+                                                <CardActionArea className={classes.action}>
+                                                    <CardMedia className={classes.media}
+                                                        component="img"
+                                                        image={cell.urlImage}
+                                                        alt={cell.description}
+                                                    />
+                                                    <CardContent className={classes.content}>
+                                                        <ThemeProvider theme={theme}>
+                                                            <Typography gutterBottom variant="h4" component="h4" className={classes.font}>
+                                                                {cell.description}
+                                                            </Typography>
+                                                        </ThemeProvider>
+                                                    </CardContent>
+                                                </CardActionArea>
+                                            </Card>
+                                        </Grid>
+                                    )
+                                })}
+                            </Grid>
+                        </Container>
                     )
                 })}
         </div>
@@ -80,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     content: {
         position: "relative",
         color: "#ffffff",
-        backgroundColor: "rgba(0,0,0,.24)"
+        backgroundColor: "rgba(0,0,0,0.14)"
 
     },
     font: {
