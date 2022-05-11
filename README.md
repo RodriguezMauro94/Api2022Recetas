@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/58576182/167960757-4d9cbdb9-fb07-4da9-b61b-393febfce0c9.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">La Nonna Recetas</h3>
