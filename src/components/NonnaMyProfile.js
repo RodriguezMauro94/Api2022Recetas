@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { TextField, useMediaQuery } from '@material-ui/core';
-import { Button, Stack } from '@mui/material';
+import { Button, Container, Stack , Grid} from '@mui/material';
 import { Box } from "@mui/system";
 import NonnaRecipesSlider from './NonnaRecipesSlider'
 import recipes from '../mocks/recipes.json'
@@ -34,8 +34,7 @@ export default function NonnaMyProfile() {
     return (
         <>
             <div className={classes.root}>
-                <div className={classes.image}>
-                    <Stack spacing={1}>
+                    <Stack spacing={0.5}>
                         <Box
                             component="img"
                             className={classes.imageBox}
@@ -53,52 +52,52 @@ export default function NonnaMyProfile() {
                             onClick={() => uploadInputRef.current && uploadInputRef.current.click()}
                             color="inherit"
                             variant="contained">
-                            Subir Foto
+                            Cambiar Foto
                         </Button>
                     </Stack>
-                </div>
-                <div>
-                    <Typography variant="h4">Mi perfil</Typography>
-                    <Stack>
-                        <TextField
-                            label="Nombre y apellido"
-                            variant="filled"
-                            fullWidth
-                            onChange={handleChange('name')}
-                            defaultValue={user.name}
-                            InputProps={{
-                                readOnly: values.editable,
-                            }}
-                            className={classes.review}
-                        />
-                        <TextField
-                            label="Correo electrónico"
-                            variant="filled"
-                            fullWidth
-                            onChange={handleChange('email')}
-                            defaultValue={user.email}
-                            InputProps={{
-                                readOnly: values.editable,
-                            }}
-                            className={classes.review}
-                        />
+                
+                    <Container sx={{ height: '100vh' }}>
+                        <Typography variant="h4">Mi perfil</Typography>
+                        <Grid spacing ={1}  container direction="column" justifyContent="center"alignItems="flex-start">
+                            <TextField
+                                label="Nombre y apellido"
+                                variant="filled"
+                                fullWidth
+                                onChange={handleChange('name')}
+                                defaultValue={user.name}
+                                InputProps={{
+                                    readOnly: values.editable,
+                                }}
+                                className={classes.review}
+                            />
+                            <TextField
+                                label="Correo electrónico"
+                                variant="filled"
+                                fullWidth
+                                onChange={handleChange('email')}
+                                defaultValue={user.email}
+                                InputProps={{
+                                    readOnly: values.editable,
+                                }}
+                                className={classes.review}
+                            />
 
-                        {values.editable ?
-                            <Button onClick={handleClickEditable}>
-                                Guardar
-                            </Button>
-                            :
-                            <Button onClick={handleClickEditable}>
-                                Editar
-                            </Button>
-                        }
+                            {values.editable ?
+                                <Button onClick={handleClickEditable}>
+                                    Guardar
+                                </Button>
+                                :
+                                <Button onClick={handleClickEditable}>
+                                    Editar
+                                </Button>
+                            }
 
-                        <Typography variant="h4">Mis recetas</Typography>
-                        <NonnaRecipesSlider
-                            data={getTopRecipes}
-                        />
-                    </Stack>
-                </div>
+                            <Typography variant="h4">Mis recetas</Typography>
+                            <NonnaRecipesSlider
+                                data={getTopRecipes}
+                            />
+                        </Grid>
+                    </Container>
             </div>
         </>
     );
@@ -110,8 +109,8 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         marginTop: 25,
         [theme.breakpoints.up('md')]: {
-            paddingLeft: "100px",
-            paddingRight: "100px",
+            paddingLeft: "50px",
+            paddingRight: "50px",
         },
         [theme.breakpoints.down('md')]: {
             paddingLeft: "20px",
@@ -152,10 +151,10 @@ const useStyles = makeStyles((theme) => ({
             maxWidth: { xs: 200, md: 200 }
         },
         [theme.breakpoints.down('md')]: {
-            height: 50,
-            width: 50,
-            maxHeight: { xs: 50, md: 50 },
-            maxWidth: { xs: 50, md: 50 }
+            height: 75,
+            width: 75,
+            maxHeight: { xs: 75, md: 75 },
+            maxWidth: { xs: 75, md: 75 }
         },
     },
 }));
