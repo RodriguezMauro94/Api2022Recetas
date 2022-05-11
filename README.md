@@ -183,6 +183,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contacto
 
 Mauro Rodriguez - rodriguezmauro1994@gmail.com
+
 Franco Benito - francobenito@protonmail.com
 
 Project Link: [https://github.com/RodriguezMauro94/Api2022Recetas](https://github.com/RodriguezMauro94/Api2022Recetas)
