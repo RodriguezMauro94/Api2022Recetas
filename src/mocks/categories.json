@@ -20,43 +20,43 @@
         "urlImage": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id": "pollo",
-        "description": "Pollo",
+        "id": "postre",
+        "description": "Postre",
         "urlImage": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id": "pollo",
-        "description": "Pollo",
+        "id": "chino",
+        "description": "Chino",
         "urlImage": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id": "pollo",
-        "description": "Pollo",
+        "id": "sushi",
+        "description": "Sushi",
         "urlImage": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id": "pollo",
-        "description": "Pollo",
+        "id": "japones",
+        "description": "Japones",
         "urlImage": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id": "pollo",
-        "description": "Pollo",
+        "id": "ensalada",
+        "description": "Ensalada",
         "urlImage": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id": "pollo",
-        "description": "Pollo",
+        "id": "tapas",
+        "description": "Tapas",
         "urlImage": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id": "pollo",
-        "description": "Pollo",
+        "id": "tarta",
+        "description": "Tarta",
         "urlImage": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     },
     {
-        "id": "pollo",
-        "description": "Pollo",
+        "id": "pescado",
+        "description": "Pescado",
         "urlImage": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
     }
 ]

@@ -4,10 +4,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid, useMediaQuery } from '@material-ui/core';
-import { ClassNames } from '@emotion/react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import categories from '../mocks/categories.json'
+import { ThemeProvider } from '@mui/material/styles';
+import { Container } from '@mui/material';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import NonnaLink from './NonnaLink';
+
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
 
 export default function NonnaCategories() {
     const classes = useStyles();
@@ -18,30 +23,34 @@ export default function NonnaCategories() {
             {
                 getRows(isMobile).map((row) => {
                     return (
-                        <Grid container spacing={3}>
-                            {row.map((cell) => {
-                                return (
-                                    <Grid item xs={3}>
-                                        <NonnaLink to={`/buscar/${cell.description}`}>
-                                            <Card className={classes.card}>
-                                                <CardActionArea className={classes.action}>
-                                                    <CardMedia className={classes.media}
-                                                        component="img"
-                                                        image={cell.urlImage}
-                                                        alt={cell.description}
-                                                    />
-                                                    <CardContent className={classes.content}>
-                                                        <Typography gutterBottom variant="h1" component="h1" className={ClassNames.font}>
-                                                            {cell.description}
-                                                        </Typography>
-                                                    </CardContent>
-                                                </CardActionArea>
-                                            </Card>
-                                        </NonnaLink>
-                                    </Grid>
-                                )
-                            })}
-                        </Grid>
+                        <Container>
+                            <Grid container spacing={2}>
+                                {row.map((cell) => {
+                                    return (
+                                        <Grid item xs={6} md={3}>
+                                            <NonnaLink to={`/buscar/${cell.description}`}>
+                                                <Card className={classes.card}>
+                                                    <CardActionArea className={classes.action}>
+                                                        <CardMedia className={classes.media}
+                                                            component="img"
+                                                            image={cell.urlImage}
+                                                            alt={cell.description}
+                                                        />
+                                                        <CardContent className={classes.content}>
+                                                            <ThemeProvider theme={theme}>
+                                                                <Typography gutterBottom variant="h4" component="h4" className={classes.font}>
+                                                                    {cell.description}
+                                                                </Typography>
+                                                            </ThemeProvider>
+                                                        </CardContent>
+                                                    </CardActionArea>
+                                                </Card>
+                                            </NonnaLink>
+                                        </Grid>
+                                    )
+                                })}
+                            </Grid>
+                        </Container>
                     )
                 })}
         </div>
@@ -56,7 +65,8 @@ const useStyles = makeStyles((theme) => ({
         height: 150
     },
     action: {
-        position: "relative"
+        position: "relative",
+        height: 150
     },
     media: {
         position: "absolute",
@@ -68,8 +78,11 @@ const useStyles = makeStyles((theme) => ({
     content: {
         position: "relative",
         color: "#ffffff",
-        backgroundColor: "rgba(0,0,0,.24)"
+        backgroundColor: "rgba(0,0,0,0.14)"
 
+    },
+    font: {
+        textAlign: "center"
     }
 }));
 
