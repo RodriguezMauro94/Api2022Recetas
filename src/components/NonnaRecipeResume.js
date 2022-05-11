@@ -3,12 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { Box } from '@material-ui/core';
 import { Stack } from '@mui/material';
-import NonnaRatings from './NonnaRatings'
+import NonnaRatings from './NonnaRatings';
+import Paper from '@mui/material/Paper';
 
 export default function NonnaRecipeResume(props) {
     const classes = useStyles();
 
     return (
+        <Paper elevation={3} variant="outlined">
         <div className={classes.root}>
             <div className={classes.recipeImage}>
                 <Box
@@ -33,6 +35,7 @@ export default function NonnaRecipeResume(props) {
                 </Stack>
             </div>
         </div>
+        </Paper>
     );
 }
 
