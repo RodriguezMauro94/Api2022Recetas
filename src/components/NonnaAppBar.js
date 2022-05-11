@@ -24,7 +24,7 @@ export default function NonnaAppBar() {
         <Toolbar>
           <NonnaLink to='/'>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <FaceIcon />
+              <img width="36px" height="36px" src={process.env.PUBLIC_URL + '/logo192.png'} alt="Nonna" />
               <Typography variant="h6" >
                 La Nonna
               </Typography>

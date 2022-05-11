@@ -7,6 +7,7 @@ import { CardActionArea, Grid, useMediaQuery } from '@material-ui/core';
 import { ClassNames } from '@emotion/react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import categories from '../mocks/categories.json'
+import NonnaLink from './NonnaLink';
 
 export default function NonnaCategories() {
     const classes = useStyles();
@@ -21,20 +22,22 @@ export default function NonnaCategories() {
                             {row.map((cell) => {
                                 return (
                                     <Grid item xs={3}>
-                                        <Card className={classes.card}>
-                                            <CardActionArea className={classes.action}>
-                                                <CardMedia className={classes.media}
-                                                    component="img"
-                                                    image={cell.urlImage}
-                                                    alt={cell.description}
-                                                />
-                                                <CardContent className={classes.content}>
-                                                    <Typography gutterBottom variant="h1" component="h1" className={ClassNames.font}>
-                                                        {cell.description}
-                                                    </Typography>
-                                                </CardContent>
-                                            </CardActionArea>
-                                        </Card>
+                                        <NonnaLink to={`/buscar/${cell.description}`}>
+                                            <Card className={classes.card}>
+                                                <CardActionArea className={classes.action}>
+                                                    <CardMedia className={classes.media}
+                                                        component="img"
+                                                        image={cell.urlImage}
+                                                        alt={cell.description}
+                                                    />
+                                                    <CardContent className={classes.content}>
+                                                        <Typography gutterBottom variant="h1" component="h1" className={ClassNames.font}>
+                                                            {cell.description}
+                                                        </Typography>
+                                                    </CardContent>
+                                                </CardActionArea>
+                                            </Card>
+                                        </NonnaLink>
                                     </Grid>
                                 )
                             })}
