@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { TextField, useMediaQuery } from '@material-ui/core';
-import { Button, Container, Stack , Grid, Paper} from '@mui/material';
+import { Button, Container, Stack , Grid} from '@mui/material';
 import { Box } from "@mui/system";
 import NonnaRecipesSlider from './NonnaRecipesSlider'
 import recipes from '../mocks/recipes.json'
@@ -32,10 +32,9 @@ export default function NonnaMyProfile() {
     const uploadInputRef = useRef(null);
 
     return (
-        <Paper sx={{p:2,margin:1,maxWidth:'auto',flexGrow: 1,marginTop:2}}>
         <>
-            <Grid container spacing={1}>
-                    <Grid item spacing={0.5}>
+            <div className={classes.root}>
+                    <Stack spacing={0.5}>
                         <Box
                             component="img"
                             className={classes.imageBox}
@@ -49,19 +48,17 @@ export default function NonnaMyProfile() {
                             style={{ display: "none" }}
                         />
                         {/*onChange={onChange}*/}
-                        <Grid item>
                         <Button
                             onClick={() => uploadInputRef.current && uploadInputRef.current.click()}
                             color="inherit"
                             variant="contained">
                             Cambiar Foto
                         </Button>
-                        </Grid>
-                    </Grid>
+                    </Stack>
                 
-                    <Grid item xs={12} sm container>
+                    <Container sx={{ height: '100vh' }}>
                         <Typography variant="h4">Mi perfil</Typography>
-                        <Grid spacing ={0.5}  container direction="column" justifyContent="center"alignItems="flex-start">
+                        <Grid spacing ={1}  container direction="column" justifyContent="center"alignItems="flex-start">
                             <TextField
                                 label="Nombre y apellido"
                                 variant="filled"
@@ -86,11 +83,11 @@ export default function NonnaMyProfile() {
                             />
 
                             {values.editable ?
-                                <Button onClick={handleClickEditable} color="inherit" variant="contained">
+                                <Button onClick={handleClickEditable}>
                                     Guardar
                                 </Button>
                                 :
-                                <Button onClick={handleClickEditable} color="inherit" variant="contained">
+                                <Button onClick={handleClickEditable}>
                                     Editar
                                 </Button>
                             }
@@ -100,17 +97,51 @@ export default function NonnaMyProfile() {
                                 data={getTopRecipes}
                             />
                         </Grid>
-                    </Grid>
-            </Grid>
+                    </Container>
+            </div>
         </>
-        </Paper>
     );
 }
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+        display: "flex",
+        marginTop: 25,
+        [theme.breakpoints.up('md')]: {
+            paddingLeft: "50px",
+            paddingRight: "50px",
+        },
+        [theme.breakpoints.down('md')]: {
+            paddingLeft: "20px",
+            paddingRight: "20px",
+        },
+    },
+    formRoot: {
+        flexGrow: 1,
+        display: "flex",
+        marginTop: 15,
+        paddingBottom: "50px",
+    },
+    image: {
+        marginRight: "40px"
+    },
+    ratings: {
+        display: "flex",
+        gap: 25
+    },
+    boldText: {
+        fontWeight: 700
+    },
+    rating: {
+        display: "flex",
+        gap: 5
+    },
     review: {
         borderRadius: "20px",
-        margin:4
+    },
+    subtitle: {
+        marginTop: "25px"
     },
     imageBox: {
         [theme.breakpoints.up('md')]: {
@@ -120,10 +151,10 @@ const useStyles = makeStyles((theme) => ({
             maxWidth: { xs: 200, md: 200 }
         },
         [theme.breakpoints.down('md')]: {
-            height: 150,
-            width: 150,
-            maxHeight: { xs: 150, md: 150 },
-            maxWidth: { xs: 150, md: 150 }
+            height: 75,
+            width: 75,
+            maxHeight: { xs: 75, md: 75 },
+            maxWidth: { xs: 75, md: 75 }
         },
     },
 }));
