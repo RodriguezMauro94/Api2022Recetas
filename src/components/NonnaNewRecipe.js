@@ -147,15 +147,17 @@ const useStyles = makeStyles((theme) => ({
         gap: 25
     },
     boldText: {
-        fontWeight: 700
+        fontWeight: 700,
+        margin: 5
     },
     rating: {
-        display: "flex",
+        display: "flex-root",
         gap: 5
     },
     review: {
         borderRadius: "20px",
         margin: 4,
+        width: 350
     },
     subtitle: {
         marginTop: "25px"
