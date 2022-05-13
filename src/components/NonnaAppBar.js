@@ -5,7 +5,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import FaceIcon from '@mui/icons-material/Face';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Drawer, List, ListItem, useMediaQuery } from '@material-ui/core';
 import { orange } from '@mui/material/colors';
@@ -17,6 +16,7 @@ export default function NonnaAppBar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [openDrawer, setOpenDrawer] = useState(true);
+  const userLogged = window.sessionStorage.getItem("userLogged");
 
   return (
     <div className={classes.root}>
@@ -45,7 +45,7 @@ export default function NonnaAppBar() {
                   {items.map((row) => (
                     <ListItem>
                       <NonnaLink to={row.to}>
-                        {getButton(row, classes)}
+                        {getButton(row, classes, userLogged)}
                       </NonnaLink>
                     </ListItem>
                   ))}
@@ -56,7 +56,7 @@ export default function NonnaAppBar() {
             <>
               {items.map((row) => (
                 <NonnaLink to={row.to}>
-                  {getButton(row, classes)}
+                  {getButton(row, classes, userLogged)}
                 </NonnaLink>
               ))}
             </>
@@ -102,7 +102,11 @@ const PrimaryButton = styled(Button)(({ theme }) => ({
   marginRight: "5px"
 }));
 
-function getButton(row, classes) {
+function getButton(row, classes, userLogged) {
+  if( (row.permission=='notLogged' && userLogged) || (row.permission=='logged' && !userLogged)) {
+    return <></>
+  }
+  
   if (row.type === 'primary') {
     return (
       <PrimaryButton>{row.description}</PrimaryButton>
@@ -114,10 +118,11 @@ function getButton(row, classes) {
   }
 }
 
-function createData(description, to, type) {
+function createData(description, to, permission, type) {
   return {
     description,
     to,
+    permission,
     type
   };
 }
@@ -125,23 +130,26 @@ function createData(description, to, type) {
 const items = [
   createData(
     'Recetas',
-    '/buscar'
+    '/buscar',
   ),
   createData(
     'Subir receta',
-    '/nueva-receta'
+    '/nueva-receta',
   ),
   createData(
     'Ingresar',
-    '/login'
+    '/login',
+    'notLogged'
   ),
   createData(
     'Mi Perfil',
-    '/mi-perfil'
+    '/mi-perfil',
+    'logged'
   ),
   createData(
     'Registrate',
     '/registro',
+    'notLogged',
     'primary'
   )
 ]

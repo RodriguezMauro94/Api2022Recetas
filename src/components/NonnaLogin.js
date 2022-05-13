@@ -21,6 +21,9 @@ export default function NonnaLogin() {
       email: data.get('email'),
       password: data.get('password'),
     });
+    if(data.get('email') !== "" || data.get('password')) {
+      window.sessionStorage.setItem("userLogged", true);
+    }
   };
 
   return (
