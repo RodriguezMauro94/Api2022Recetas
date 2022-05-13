@@ -26,7 +26,7 @@ const footers = [
     title: 'Nosotros',
     items: [
       {
-        description: 'Quienes Somos',
+        description: 'Sobre La Nonna',
         link: '/sobre-nosotros',
       }
     ]
@@ -115,6 +115,7 @@ export default function StickyFooter() {
     </Container>
   );
 }
+
 const useStyles = makeStyles((theme) => ({
   list: {
     margin: "0",
