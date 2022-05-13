@@ -103,8 +103,10 @@ const PrimaryButton = styled(Button)(({ theme }) => ({
 }));
 
 function getButton(row, classes, userLogged) {
-  if( (row.permission=='notLogged' && userLogged) || (row.permission=='logged' && !userLogged)) {
-    return <></>
+  if(row.permission=='notLogged' && userLogged == "true") {
+    return <></>;
+  } else if (row.permission=='logged' && userLogged != "true") {
+    return <></>;
   }
   
   if (row.type === 'primary') {
@@ -131,20 +133,26 @@ const items = [
   createData(
     'Recetas',
     '/buscar',
+    "",
+    ""
   ),
   createData(
     'Subir receta',
     '/nueva-receta',
+    "logged",
+    ""
   ),
   createData(
     'Ingresar',
     '/login',
-    'notLogged'
+    'notLogged',
+    ""
   ),
   createData(
     'Mi Perfil',
     '/mi-perfil',
-    'logged'
+    'logged',
+    ""
   ),
   createData(
     'Registrate',
