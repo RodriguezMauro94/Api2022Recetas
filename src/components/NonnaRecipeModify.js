@@ -25,7 +25,7 @@ export default function NonnaRecipeModify(props) {
         <Paper sx={{p:3,margin:1,maxWidth:'auto',flexGrow: 1,marginTop:2}}>
         <Grid container spacing={1}>
                 <Grid item spacing={1}>
-                <Typography variant="h4">Crear receta</Typography>
+                <Typography variant="h4">Modificar receta</Typography>
                     
                         <Box
                             component="img"
@@ -117,7 +117,7 @@ export default function NonnaRecipeModify(props) {
                     <NonnaStepCreator />
                     <Stack spacing={2} direction="row">
                     <Button variant="outlined" color="error">Eliminar receta</Button>
-                        <Button color="inherit" variant="outlined">Guardar receta</Button>
+                        <Button color="inherit" variant="outlined">Guardar cambios</Button>
                         <Button color="inherit" variant="contained">Subir receta</Button>
                     </Stack>
                 </Grid>

@@ -16,6 +16,7 @@ export default function NonnaMyProfile() {
     let [values, setValues] = React.useState({
         name: "",
         email: "",
+        password: "",
         editable: false
     });
     const handleChange = (prop) => (event) => {
@@ -84,6 +85,18 @@ export default function NonnaMyProfile() {
                                 }}
                                 className={classes.review}
                             />
+                            <TextField
+                                label="Password"
+                                variant="filled"
+                                type="password"
+                                fullWidth
+                                onChange={handleChange('password')}
+                                defaultValue={user.password}
+                                InputProps={{
+                                    readOnly: values.editable,
+                                }}
+                                className={classes.review}
+                            />
 
                             {values.editable ?
                                 <Button onClick={handleClickEditable} color="inherit" variant="contained">
@@ -128,21 +141,24 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function createData(name, email) {
+function createData(name, email, password) {
     return {
         name,
-        email
+        email,
+        password
     };
 }
 
 const users = [
     createData(
         'Juan Carlos',
-        'juancarlos@gmail.com'
+        'juancarlos@gmail.com',
+        'SuperSecretPassword'
     ),
     createData(
         'Roberto Fernandez',
-        'miNombreEsRoberto@hotmail.com'
+        'miNombreEsRoberto@hotmail.com',
+        'SuperSecretPassword'
     )
 ]
 
