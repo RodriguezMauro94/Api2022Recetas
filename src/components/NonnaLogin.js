@@ -12,8 +12,12 @@ import Typography from '@mui/material/Typography';
 import { orange } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import NonnaLink from './NonnaLink';
+import { Alert, Collapse, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function NonnaLogin() {
+  const [open, setOpen] = React.useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -21,8 +25,10 @@ export default function NonnaLogin() {
       email: data.get('email'),
       password: data.get('password'),
     });
-    if(data.get('email') !== "" || data.get('password')) {
+    if (data.get('email') !== "" || data.get('password')) {
       window.sessionStorage.setItem("userLogged", true);
+    } else {
+      setOpen(true);
     }
   };
 
@@ -79,6 +85,26 @@ export default function NonnaLogin() {
               id="password"
               autoComplete="current-password"
             />
+            <Collapse in={open}>
+              <Alert
+                severity="error"
+                action={
+                  <IconButton
+                    aria-label="close"
+                    color="inherit"
+                    size="small"
+                    onClick={() => {
+                      setOpen(false);
+                    }}
+                  >
+                    <CloseIcon fontSize="inherit" />
+                  </IconButton>
+                }
+                sx={{ mb: 2 }}
+              >
+                Debes ingresar usuario y contraseña!
+              </Alert>
+            </Collapse>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Recordame"
