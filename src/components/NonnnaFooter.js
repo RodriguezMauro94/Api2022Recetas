@@ -28,7 +28,7 @@ const footers = [
   },
   {
     title: 'Curiosidades',
-    description: ['Recetas para la cria', 'Recetas para uno', 'Bueno bonito y barato', 'Almorzando con Mirtha'],
+    description: ['Recetas para retoños', 'Recetas para uno', 'Bueno bonito y barato', 'Almorzando con Mirtha'],
   },
   {
     title: 'Legal',
