@@ -57,8 +57,8 @@ export default function NonnaStepCreator() {
                         className={classes.review}
                     />
                     <div>
-                        <Button color="inherit">Agregar paso</Button>
-                        <Button color="inherit">Eliminar paso</Button>
+                        <Button variant="outlined" color="error">Agregar paso</Button>
+                        <Button variant="outlined" color="success">Eliminar paso</Button>
                     </div>
                 </Stack>
             </div>
