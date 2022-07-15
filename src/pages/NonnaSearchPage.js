@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { getRecipes } from '../api/recipeController';
 
 export default function NonnaSearchPage() {
+    //TODO agregar ordenado y filtrado
     let params = useParams();
     const [list, setList] = useState({
         data: []
@@ -28,7 +29,7 @@ export default function NonnaSearchPage() {
         <>
             <NonnaFilterBar />
             {list.data.map((recipe) => (
-                <NonnaLink to={`/receta/${recipe.id}`}>
+                <NonnaLink to={`/receta/${recipe._id}`}>
                     <NonnaRecipeResume
                         image={recipe.urlImage}
                         recipeTitle={recipe.name}

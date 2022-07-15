@@ -8,11 +8,9 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import recipes from '../mocks/recipes.json';
 
 export default function NonnaRecipeIngredients(props) {
     const classes = useStyles();
-    let recipe = recipes.find(recipe => recipe.id === props.id);
 
     return (
         <Container>
@@ -22,7 +20,7 @@ export default function NonnaRecipeIngredients(props) {
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="Ingredientes">
                     <TableBody>
-                        {recipe.ingredients.map((row) => (
+                        {props.ingredients.map((row) => (
                             <TableRow
                                 key={row.ingredient} >
                                 <TableCell

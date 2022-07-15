@@ -10,3 +10,8 @@ export function getRecipes(search) {
     return fetch(api + 'getRecipes' + param)
         .then(data => data.json())
 }
+
+export function getRecipeDetails(id) {
+    return fetch(api + 'details/' + id)
+        .then(data => data.json())
+}

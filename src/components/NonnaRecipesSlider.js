@@ -27,7 +27,7 @@ export default function NonnaRecipesSlider(props) {
                     <TableRow>
                         {list.data.map((row) => (
                             <TableCell className={classes.cell} scope="row">
-                                <NonnaRecipeCard id={row.id} imageUrl={row.urlImage} title={row.name} description={row.description} />
+                                <NonnaRecipeCard id={row._id} imageUrl={row.urlImage} title={row.name} description={row.description} />
                             </TableCell>
                         ))}
                     </TableRow>
