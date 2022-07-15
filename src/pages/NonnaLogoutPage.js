@@ -1,16 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import NonnaAboutUs from "../components/NonnaAboutUs";
 
 export default function NonnaLoginPage() {
-    let navigate = useNavigate();
     return (
         <>
             {
                 window.sessionStorage.clear("token")
             }
-            {
-                navigate("../", { replace: true })
-            }
+            <NonnaAboutUs />
         </>
     );
 }
