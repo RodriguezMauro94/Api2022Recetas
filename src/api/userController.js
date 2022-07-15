@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 const api = 'http://localhost:4000/api/';
 
 export function login(user) {
