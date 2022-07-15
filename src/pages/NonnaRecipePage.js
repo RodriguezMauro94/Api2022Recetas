@@ -6,7 +6,7 @@ import NonnaCreateReview from "../components/NonnaCreateReview";
 import NonnaRecipeResume from "../components/NonnaRecipeResume";
 import NonnaRecipeStep from "../components/NonnaRecipeStep";
 import recipes from '../mocks/recipes.json';
-import difficulties from '../mocks/difficulties.json';
+import difficulties from '../data/difficulties.json';
 
 export default function NonnaRecipePage() {
   let params = useParams();

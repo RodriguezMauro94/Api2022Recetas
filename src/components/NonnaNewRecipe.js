@@ -6,7 +6,7 @@ import { Button, Checkbox, FormControl, InputLabel, MenuItem, Select, Stack,Grid
 import { Box } from "@mui/system";
 import NonnaIngredientsTable from "./NonnaIngredientsTable";
 import NonnaStepCreator from "./NonnaStepCreator";
-import difficulties from '../mocks/difficulties.json'
+import difficulties from '../data/difficulties.json'
 
 export default function NonnaNewRecipe(props) {
     const classes = useStyles();
