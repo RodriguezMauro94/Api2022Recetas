@@ -5,8 +5,8 @@ import { Stack } from '@mui/material';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { Box, Button, Checkbox, IconButton, MenuItem, Modal, Select } from '@material-ui/core';
 import FilterIcon from '@mui/icons-material/FilterList';
-import categories from '../mocks/categories.json'
-import difficulties from '../mocks/difficulties.json'
+import categories from '../data/categories.json'
+import difficulties from '../data/difficulties.json'
 
 export default function NonnaFilterBar(props) {
     let searchParams = useSearchParams();

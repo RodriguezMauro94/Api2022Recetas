@@ -2,9 +2,9 @@ import React from "react";
 import NonnaLink from "../components/NonnaLink";
 import NonnaRecipeResume from "../components/NonnaRecipeResume";
 import recipes from '../mocks/recipes.json';
-import difficulties from '../mocks/difficulties.json';
+import difficulties from '../data/difficulties.json';
 import NonnaFilterBar from "../components/NonnaFilterBar";
-import categories from "../mocks/categories.json"
+import categories from "../data/categories.json"
 import { useParams } from "react-router-dom";
 
 export default function NonnaSearchPage() {

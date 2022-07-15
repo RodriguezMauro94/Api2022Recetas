@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import categories from '../mocks/categories.json'
+import categories from '../data/categories.json'
 import { ThemeProvider } from '@mui/material/styles';
 import { Container } from '@mui/material';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
