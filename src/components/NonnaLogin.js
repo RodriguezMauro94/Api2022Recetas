@@ -14,8 +14,11 @@ import { styled } from '@mui/material/styles';
 import NonnaLink from './NonnaLink';
 import { Alert, Collapse, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { login } from '../api/userController';
+import { useNavigate } from "react-router-dom";
 
 export default function NonnaLogin() {
+  let navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = (event) => {
@@ -26,7 +29,13 @@ export default function NonnaLogin() {
       password: data.get('password'),
     });
     if (data.get('email') !== "" || data.get('password')) {
-      window.sessionStorage.setItem("userLogged", true);
+      login({
+        email: data.get('email'),
+        password: data.get('password'),
+      }).then((data) => {
+        window.sessionStorage.setItem("token", data.loginUser.token);
+        navigate("../", { replace: true });
+      });
     } else {
       setOpen(true);
     }

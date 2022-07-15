@@ -9,18 +9,23 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { orange } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
+import { create } from '../api/userController';
+import { useNavigate } from "react-router-dom";
 
 export default function NonnaRegister() {
+    let navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
+        create({
             name: data.get('name'),
-            lastName: data.get('lastName'),
             email: data.get('email'),
-            cel: data.get('cel'),
-            password: data.get('password'),
-            repitPassword: data.get('repitPassword')
+            cellphone: data.get('cel'),
+            password: data.get('password')
+        }).then((data) => {
+            window.sessionStorage.setItem("token", data.createdUser);
+            navigate("../", { replace: true });
         });
     };
 
