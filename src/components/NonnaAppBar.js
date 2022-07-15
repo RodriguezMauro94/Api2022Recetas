@@ -16,7 +16,7 @@ export default function NonnaAppBar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [openDrawer, setOpenDrawer] = useState(true);
-  const userLogged = window.sessionStorage.getItem("userLogged");
+  const token = window.sessionStorage.getItem("token");
 
   return (
     <div className={classes.root}>
@@ -45,7 +45,7 @@ export default function NonnaAppBar() {
                   {items.map((row) => (
                     <ListItem>
                       <NonnaLink to={row.to}>
-                        {getButton(row, classes, userLogged)}
+                        {getButton(row, classes, token)}
                       </NonnaLink>
                     </ListItem>
                   ))}
@@ -56,7 +56,7 @@ export default function NonnaAppBar() {
             <>
               {items.map((row) => (
                 <NonnaLink to={row.to}>
-                  {getButton(row, classes, userLogged)}
+                  {getButton(row, classes, token)}
                 </NonnaLink>
               ))}
             </>
@@ -102,10 +102,10 @@ const PrimaryButton = styled(Button)(({ theme }) => ({
   marginRight: "5px"
 }));
 
-function getButton(row, classes, userLogged) {
-  if(row.permission=='notLogged' && userLogged == "true") {
+function getButton(row, classes, token) {
+  if(row.permission=='notLogged' && token != undefined) {
     return <></>;
-  } else if (row.permission=='logged' && userLogged != "true") {
+  } else if (row.permission=='logged' && token == undefined) {
     return <></>;
   }
   
@@ -159,5 +159,11 @@ const items = [
     '/registro',
     'notLogged',
     'primary'
-  )
+  ),
+  createData(
+    'Salir',
+    '/logout',
+    'logged',
+    ""
+  ),
 ]

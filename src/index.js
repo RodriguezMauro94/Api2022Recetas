@@ -8,6 +8,7 @@ import NonnaHomePage from './pages/NonnaHomePage';
 import NonnaNotFound from './pages/NonnaNotFound';
 import NonnaRegisterPage from './pages/NonnaRegisterPage';
 import NonnaLoginPage from './pages/NonnaLoginPage';
+import NonnaLogoutPage from './pages/NonnaLogoutPage';
 import NonnaAboutUsPage from './pages/NonnaAboutUsPage';
 import NonnaRecipePage from './pages/NonnaRecipePage';
 import NonnaSearchPage from './pages/NonnaSearchPage';
@@ -23,6 +24,7 @@ ReactDOM.render(
           <Route index element={<NonnaHomePage />} />
           <Route path='registro' element={<NonnaRegisterPage />} />
           <Route path='login' element={<NonnaLoginPage />} />
+          <Route path='logout' element={<NonnaLogoutPage />} />
           <Route path='sobre-nosotros' element={<NonnaAboutUsPage />} />
           <Route path='receta/:id' element={<NonnaRecipePage />} />
           <Route path='buscar' element={<NonnaSearchPage />}>
