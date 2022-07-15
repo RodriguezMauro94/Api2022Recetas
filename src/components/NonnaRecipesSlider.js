@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableRow } from '@material-ui/core';
 import NonnaRecipeCard from './NonnaRecipeCard';
-import { getTopRecipes } from '../api/recipeController';
+
 
 export default function NonnaRecipesSlider(props) {
     const classes = useStyles();
@@ -12,7 +12,7 @@ export default function NonnaRecipesSlider(props) {
 
     useEffect(() => {
         let mounted = true;
-        getTopRecipes()
+        props.data()
             .then(items => {
                 if (mounted) {
                     setList(items)

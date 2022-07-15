@@ -3,7 +3,7 @@ import NonnaHeaderLanding from "../components/NonnaHeaderLanding";
 import NonnaSectionTitle from "../components/NonnaSectionTitle";
 import NonnaCategories from "../components/NonnaCategories";
 import NonnaRecipesSlider from "../components/NonnaRecipesSlider";
-import recipes from '../mocks/recipes.json'
+import { getTopRecipes } from '../api/recipeController';
 
 export default function NonnaHome() {
   return (
@@ -17,6 +17,3 @@ export default function NonnaHome() {
   );
 }
 
-function getTopRecipes() {
-  return recipes;
-}
