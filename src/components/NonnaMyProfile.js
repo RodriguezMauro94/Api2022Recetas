@@ -5,7 +5,7 @@ import { TextField, useMediaQuery } from '@material-ui/core';
 import { Button, Container, Stack , Grid, Paper} from '@mui/material';
 import { Box } from "@mui/system";
 import NonnaRecipesSlider from './NonnaRecipesSlider'
-import recipes from '../mocks/recipes.json'
+import { getTopRecipes } from '../api/recipeController'; // FIXME
 
 export default function NonnaMyProfile() {
     const classes = useStyles();
@@ -161,9 +161,3 @@ const users = [
         'SuperSecretPassword'
     )
 ]
-
-function getTopRecipes() {
-    return recipes.filter(
-        recipe => recipe.user === "12346890"
-    )
-}
