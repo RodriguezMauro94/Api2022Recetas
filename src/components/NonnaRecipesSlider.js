@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableRow } from '@material-ui/core';
 import NonnaRecipeCard from './NonnaRecipeCard';
 
-
 export default function NonnaRecipesSlider(props) {
     const classes = useStyles();
     const [list, setList] = useState({

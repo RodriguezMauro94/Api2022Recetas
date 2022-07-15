@@ -4,3 +4,9 @@ export function getTopRecipes() {
     return fetch(api + 'getTopRecipes')
         .then(data => data.json())
 }
+
+export function getRecipes(search) {
+    var param = search ? '?description=' + search : ""
+    return fetch(api + 'getRecipes' + param)
+        .then(data => data.json())
+}

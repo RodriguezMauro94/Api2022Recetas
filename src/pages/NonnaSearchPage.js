@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import NonnaLink from "../components/NonnaLink";
 import NonnaRecipeResume from "../components/NonnaRecipeResume";
-import recipes from '../mocks/recipes.json';
 import difficulties from '../data/difficulties.json';
 import NonnaFilterBar from "../components/NonnaFilterBar";
 import categories from "../data/categories.json"
 import { useParams } from "react-router-dom";
+import { getRecipes } from '../api/recipeController';
 
 export default function NonnaSearchPage() {
     let params = useParams();
-    let searchRecipes = filterRecipes(params.search);
+    const [list, setList] = useState({
+        data: []
+    });
+
+    useEffect(() => {
+        let mounted = true;
+        getRecipes(params.search)
+            .then(items => {
+                if (mounted) {
+                    setList(items)
+                }
+            })
+        return () => mounted = false;
+    }, [])
 
     return (
         <>
             <NonnaFilterBar />
-            {searchRecipes.map((recipe) => (
+            {list.data.map((recipe) => (
                 <NonnaLink to={`/receta/${recipe.id}`}>
                     <NonnaRecipeResume
                         image={recipe.urlImage}
@@ -28,14 +41,4 @@ export default function NonnaSearchPage() {
             ))}
         </>
     );
-}
-
-function filterRecipes(search) {
-    if(search === undefined) {
-        return recipes;
-    } else {
-        return recipes.filter(
-            recipe => recipe.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) || categories.find(category => category.id === recipe.category).description.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-        )
-    }
 }
