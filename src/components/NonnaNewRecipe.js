@@ -111,12 +111,11 @@ export default function NonnaNewRecipe(props) {
                         </div>
                     </Grid>
                 </Grid>
-                <Grid spacing={0.5} container direction="column" justifyContent="center" alignItems="flex-start">
+                <Grid spacing={0.5} container direction="column" justifyContent="center" alignItems="flex-start" sx={{marginTop:5}}>
                     <NonnaIngredientsTable callback={ingredientCallback} />
                 </Grid>
 
                 <Grid spacing={0.5} container direction="column" justifyContent="center" alignItems="flex-start">
-
                     <Typography variant="h5" className={classes.subtitle}>Pasos</Typography>
                     <NonnaStepCreator />
                     <Stack spacing={2} direction="row">
@@ -135,7 +134,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 25,
         marginLeft: "100px",
         marginRight: "100px",
-
     },
     formRoot: {
         flexGrow: 1,

@@ -7,7 +7,6 @@ import NonnaRecipeResume from "../components/NonnaRecipeResume";
 import NonnaRecipeStep from "../components/NonnaRecipeStep";
 import difficulties from '../data/difficulties.json';
 import { getRecipeDetails } from '../api/recipeController';
-import { getRecipes } from '../api/recipeController';
 
 export default function NonnaRecipePage() {
   let params = useParams();
