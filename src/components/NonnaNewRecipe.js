@@ -12,6 +12,7 @@ export default function NonnaNewRecipe(props) {
     const classes = useStyles();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    var ingredientRows = [];
 
     const [age, setAge] = React.useState('');
 
@@ -20,6 +21,10 @@ export default function NonnaNewRecipe(props) {
     };
 
     const uploadInputRef = useRef(null);
+    
+    function ingredientCallback(rows) {
+        ingredientRows = rows;
+    }
 
     return (
         <Paper sx={{ p: 3, margin: 1, maxWidth: 'auto', flexGrow: 1, marginTop: 2 }}>
@@ -107,8 +112,9 @@ export default function NonnaNewRecipe(props) {
                     </Grid>
                 </Grid>
                 <Grid spacing={0.5} container direction="column" justifyContent="center" alignItems="flex-start">
-                    <NonnaIngredientsTable />
+                    <NonnaIngredientsTable callback={ingredientCallback} />
                 </Grid>
+
                 <Grid spacing={0.5} container direction="column" justifyContent="center" alignItems="flex-start">
 
                     <Typography variant="h5" className={classes.subtitle}>Pasos</Typography>

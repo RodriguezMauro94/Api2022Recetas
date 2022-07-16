@@ -130,7 +130,7 @@ EnhancedTableToolbar.propTypes = {
     numSelected: PropTypes.number.isRequired,
 };
 
-export default function NonnaIngredientsTable() {
+export default function NonnaIngredientsTable(props) {
     const classes = useStyles();
     const [tableRows, setTableRows] = useState([]);
     const [selected, setSelected] = useState([]);
@@ -158,6 +158,7 @@ export default function NonnaIngredientsTable() {
         if (newIngredient != "" && quantityIngredient != "") {
             rows.push(createData(newIngredient, quantityIngredient));
             setTableRows(rows);
+            props.callback(rows);
         }
     }
 
