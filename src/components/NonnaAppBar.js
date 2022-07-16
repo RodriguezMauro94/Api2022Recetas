@@ -137,7 +137,7 @@ const items = [
     ""
   ),
   createData(
-    'Subir receta',
+    'Crear receta',
     '/nueva-receta',
     "logged",
     ""

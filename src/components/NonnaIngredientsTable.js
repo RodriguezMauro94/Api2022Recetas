@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import { makeStyles } from '@material-ui/core/styles';
@@ -26,11 +26,6 @@ function createData(ingredient, quantity) {
 }
 
 const rows = [
-    createData('Sal', "50 gramos"),
-    createData('Pollo', "1 entero"),
-    createData('Aceite de maiz', "1 cucharada"),
-    createData('Pimienta negra', "A gusto"),
-    createData('Tomate', "2 en cuadraditos")
 ];
 
 const headCells = [
@@ -121,8 +116,7 @@ const EnhancedTableToolbar = (props) => {
             {numSelected > 0 ? (
                 <Tooltip title="Eliminar">
                     <IconButton>
-                        {/*TODO: implementar eliminar item de la tabla*/}
-                        <DeleteIcon />
+                        <DeleteIcon onClick={() => props.setTableRows([])} />
                     </IconButton>
                 </Tooltip>
             ) : (
@@ -138,16 +132,34 @@ EnhancedTableToolbar.propTypes = {
 
 export default function NonnaIngredientsTable() {
     const classes = useStyles();
-    const [selected, setSelected] = React.useState([]);
+    const [tableRows, setTableRows] = useState([]);
+    const [selected, setSelected] = useState([]);
+    const [newIngredient, setNewIngredient] = useState('');
+    const [quantityIngredient, setQuantityIngredient] = useState('');
+
+    const handleNewIngredientChange = event => {
+        setNewIngredient(event.target.value);
+    };
+
+    const handleQuantityIngredientChange = event => {
+        setQuantityIngredient(event.target.value);
+    };
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelecteds = rows.map((n) => n.name);
+            const newSelecteds = tableRows.map((n) => n.name);
             setSelected(newSelecteds);
             return;
         }
         setSelected([]);
     };
+
+    function addIngredient() {
+        if (newIngredient != "" && quantityIngredient != "") {
+            rows.push(createData(newIngredient, quantityIngredient));
+            setTableRows(rows);
+        }
+    }
 
     const handleClick = (event, name) => {
         const selectedIndex = selected.indexOf(name);
@@ -171,11 +183,15 @@ export default function NonnaIngredientsTable() {
 
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
+    function deleteSelected() {
+        setTableRows(tableRows.filter(n => !selected.includes(n.ingredient)))
+    }
+
     return (
         <>
             <Box sx={{ width: '100%' }}>
                 <Paper sx={{ width: '100%', mb: 2 }}>
-                    <EnhancedTableToolbar numSelected={selected.length} />
+                    <EnhancedTableToolbar numSelected={selected.length} setTableRows={deleteSelected} />
                     <TableContainer>
                         <Table
                             sx={{ minWidth: 750 }}
@@ -184,10 +200,10 @@ export default function NonnaIngredientsTable() {
                             <EnhancedTableHead
                                 numSelected={selected.length}
                                 onSelectAllClick={handleSelectAllClick}
-                                rowCount={rows.length}
+                                rowCount={tableRows.length}
                             />
                             <TableBody>
-                                {rows.map((row, index) => {
+                                {tableRows.map((row, index) => {
                                     const isItemSelected = isSelected(row.ingredient);
                                     const labelId = `enhanced-table-checkbox-${index}`;
 
@@ -198,7 +214,7 @@ export default function NonnaIngredientsTable() {
                                             role="checkbox"
                                             aria-checked={isItemSelected}
                                             tabIndex={-1}
-                                            key={row.ingredient}
+                                            key={row.ingredient + row.quantity}
                                             selected={isItemSelected}
                                         >
                                             <TableCell padding="checkbox">
@@ -231,12 +247,14 @@ export default function NonnaIngredientsTable() {
                 <TextField
                     label="Ingrediente"
                     variant="filled"
+                    onChange={handleNewIngredientChange}
                 />
                 <TextField
                     label="Cantidad"
                     variant="filled"
+                    onChange={handleQuantityIngredientChange}
                 />
-                <Button color="inherit">Agregar</Button>
+                <Button color="inherit" onClick={() => addIngredient()}>Agregar</Button>
             </div>
         </>
     );
