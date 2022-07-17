@@ -22,7 +22,18 @@ export function create(user) {
     .then(data => data.json())
 }
 
-export function getUserProfile(token) {
+export function getUserProfile(token) {
     return fetch(api + 'myProfile/' + token)
         .then(data => data.json())
+}
+
+export function updateUser(user) {
+    return fetch(api + 'updateUser', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({user})
+    })
+    .then(data => data.json())
 }
