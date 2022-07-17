@@ -31,7 +31,8 @@ export default function NonnaStepCreator(props) {
                     description
                 ),
             )
-            setSteps(createdSteps);
+            let newSteps = createdSteps.map((step) => step);
+            setSteps(newSteps);
             props.callback(createdSteps);
         }
     }

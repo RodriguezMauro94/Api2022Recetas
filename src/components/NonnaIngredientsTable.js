@@ -157,7 +157,8 @@ export default function NonnaIngredientsTable(props) {
     function addIngredient() {
         if (newIngredient != "" && quantityIngredient != "") {
             rows.push(createData(newIngredient, quantityIngredient));
-            setTableRows(rows);
+            let newRows = rows.map((ingredient) => ingredient);
+            setTableRows(newRows);
             props.callback(rows);
         }
     }
