@@ -36,18 +36,16 @@ export default function NonnaNewRecipe(props) {
     const createRecipeEvent = (event) => {
         event.preventDefault();
         createRecipe({
-            recipe: {
-                user: window.sessionStorage.getItem("token"),
-                ingredients: ingredientRows,
-                steps: steps,
-                name: name,
-                description: description,
-                urlImage: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
-                difficulty: difficulty,
-                vegan: vegan,
-                celiac: celiac,
-                category: category,
-            }
+            user: window.sessionStorage.getItem("token"),
+            ingredients: ingredientRows,
+            steps: steps,
+            name: name,
+            description: description,
+            urlImage: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoaWNrZW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+            difficulty: difficulty,
+            vegan: vegan,
+            celiac: celiac,
+            category: category
         }).then((data) => {
             //TODO ir al detalle de la receta?
         });
