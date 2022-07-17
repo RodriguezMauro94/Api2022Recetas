@@ -15,3 +15,14 @@ export function getRecipeDetails(id) {
     return fetch(api + 'details/' + id)
         .then(data => data.json())
 }
+
+export function createRecipe(recipe) {
+    return fetch(api + 'create', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({recipe})
+    })
+    .then(data => data.json())
+}

@@ -1,7 +1,7 @@
-const api = 'http://localhost:4000/api/';
+const api = 'http://localhost:4000/api/users/';
 
 export function login(user) {
-    return fetch(api + 'users/login', {
+    return fetch(api + 'login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ export function login(user) {
 }
 
 export function create(user) {
-    return fetch(api + 'users/registration', {
+    return fetch(api + 'registration', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
