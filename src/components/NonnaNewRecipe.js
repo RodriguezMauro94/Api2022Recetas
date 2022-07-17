@@ -33,7 +33,7 @@ export default function NonnaNewRecipe(props) {
         steps = rows;
     }
 
-    const handleSubmit = (event) => {
+    const createRecipeEvent = (event) => {
         event.preventDefault();
         createRecipe({
             recipe: {
@@ -171,7 +171,7 @@ export default function NonnaNewRecipe(props) {
                     <NonnaStepCreator callback={stepsCallback} />
                     <Stack spacing={2} direction="row">
                         <Button color="inherit" variant="outlined">Guardar borrador</Button>
-                        <Button color="inherit" variant="contained">Publicar receta</Button>
+                        <Button color="inherit" variant="contained" onClick={createRecipeEvent}>Publicar receta</Button>
                     </Stack>
                 </Grid>
             </Grid>
