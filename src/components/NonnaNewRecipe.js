@@ -13,6 +13,7 @@ export default function NonnaNewRecipe(props) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     var ingredientRows = [];
+    var steps = [];
 
     const [age, setAge] = React.useState('');
 
@@ -24,6 +25,10 @@ export default function NonnaNewRecipe(props) {
     
     function ingredientCallback(rows) {
         ingredientRows = rows;
+    }
+
+    function stepsCallback(rows) {
+        steps = rows;
     }
 
     return (
@@ -117,7 +122,7 @@ export default function NonnaNewRecipe(props) {
 
                 <Grid spacing={0.5} container direction="column" justifyContent="center" alignItems="flex-start">
                     <Typography variant="h5" className={classes.subtitle}>Pasos</Typography>
-                    <NonnaStepCreator />
+                    <NonnaStepCreator callback={stepsCallback} />
                     <Stack spacing={2} direction="row">
                         <Button variant="outlined" color="error">Eliminar receta</Button>
                         <Button color="inherit" variant="outlined">Guardar receta</Button>

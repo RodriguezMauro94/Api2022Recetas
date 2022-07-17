@@ -5,15 +5,13 @@ import { Button, Stack, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import NonnaRecipeStep from './NonnaRecipeStep';
 
-export default function NonnaStepCreator() {
+export default function NonnaStepCreator(props) {
     const classes = useStyles();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [steps, setSteps] = useState([]);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-
-    const createdSteps = [];
 
     const uploadInputRef = useRef(null);
 
@@ -34,6 +32,7 @@ export default function NonnaStepCreator() {
                 ),
             )
             setSteps(createdSteps);
+            props.callback(createdSteps);
         }
     }
 
