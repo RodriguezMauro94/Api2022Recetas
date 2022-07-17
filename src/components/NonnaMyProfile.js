@@ -192,23 +192,3 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function createData(name, email, password) {
-    return {
-        name,
-        email,
-        password
-    };
-}
-
-const users = [
-    createData(
-        'Juan Carlos',
-        'juancarlos@gmail.com',
-        'SuperSecretPassword'
-    ),
-    createData(
-        'Roberto Fernandez',
-        'miNombreEsRoberto@hotmail.com',
-        'SuperSecretPassword'
-    )
-]
