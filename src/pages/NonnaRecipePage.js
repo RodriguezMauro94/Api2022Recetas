@@ -17,9 +17,9 @@ export default function NonnaRecipePage() {
   useEffect(() => {
     let mounted = true;
     getRecipeDetails(params.id)
-      .then(items => {
+      .then(recipes => {
         if (mounted) {
-          setList(items)
+          setList(recipes)
         }
       })
     return () => mounted = false;

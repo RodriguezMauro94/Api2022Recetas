@@ -21,3 +21,8 @@ export function create(user) {
     })
     .then(data => data.json())
 }
+
+export function getUserProfile(token) {
+    return fetch(api + 'myProfile/' + token)
+        .then(data => data.json())
+}

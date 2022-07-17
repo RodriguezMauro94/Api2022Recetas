@@ -26,3 +26,8 @@ export function createRecipe(recipe) {
     })
     .then(data => data.json())
 }
+
+export function myRecipes(token) {
+    return fetch(api + 'myRecipes/' + token)
+        .then(data => data.json())
+}
