@@ -27,7 +27,8 @@ export function createRecipe(recipe) {
     .then(data => data.json())
 }
 
-export function myRecipes(token) {
+export function myRecipes() {
+    let token = window.sessionStorage.getItem("token");
     return fetch(api + 'myRecipes/' + token)
         .then(data => data.json())
 }

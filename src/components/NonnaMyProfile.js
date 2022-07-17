@@ -24,11 +24,7 @@ export default function NonnaMyProfile() {
                 }
             })
         return () => mounted = false;
-    }, [])
-
-    function callToMyRecipes() {
-        return myRecipes(token);
-    }
+    }, []);
 
     let [values, setValues] = React.useState({
         name: "",
@@ -128,7 +124,7 @@ export default function NonnaMyProfile() {
 
                                 <Typography variant="h4">Mis recetas</Typography>
                                 <NonnaRecipesSlider
-                                    data={callToMyRecipes}
+                                    data={myRecipes}
                                 />
                             </Grid>
                         </Grid>
