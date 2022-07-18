@@ -13,11 +13,6 @@ export default function NonnaFilterBar(props) {
     let params = useParams();
     const classes = useStyles();
 
-    const [orderBy, setOrderBy] = React.useState('');
-    const handleChange = (event) => {
-        setOrderBy(event.target.value);
-    };
-
     const [categoriesFilter, setCategories] = React.useState('');
     const handleChangeCategoriesFilter = (event) => {
         setCategories(event.target.value);
@@ -43,24 +38,6 @@ export default function NonnaFilterBar(props) {
                     }
                 </Typography>
                 <div className={classes.sectionRow}>
-                    <Typography variant="body1">
-                        Ordenar por
-                    </Typography>
-                    <Select
-                        sx={{
-                            minWidth: 150
-                        }}
-                        labelId="order-by-label"
-                        id="order-by-select"
-                        value={orderBy}
-                        label="Ordenar por"
-                        onChange={handleChange}>
-                        {orderCriterias.map((criteria) => {
-                            return (
-                                <MenuItem value={criteria.key}>{criteria.value}</MenuItem>
-                            )
-                        })}
-                    </Select>
                     <div className={classes.divider}></div>
                     <IconButton color="inherit" aria-label="filtros" onClick={handleOpen}>
                         <Typography variant="body1" >

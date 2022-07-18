@@ -25,6 +25,15 @@ export default function NonnaSearchPage() {
         return () => mounted = false;
     }, [])
 
+    function calculateRating(ratings) {
+        let result = 0;
+        ratings.forEach(rating => {
+            result += rating.rating;
+        });
+
+        return result;
+    }
+
     return (
         <>
             <NonnaFilterBar />
@@ -34,7 +43,7 @@ export default function NonnaSearchPage() {
                         image={recipe.urlImage}
                         recipeTitle={recipe.name}
                         recipeDescription={recipe.description}
-                        rating={recipe.ratings}
+                        rating={calculateRating(recipe.rating)}
                         difficulty={difficulties.find(difficulty => difficulty.key === recipe.difficulty).value}
                         vegan={recipe.vegan}
                         celiac={recipe.celiac} />
