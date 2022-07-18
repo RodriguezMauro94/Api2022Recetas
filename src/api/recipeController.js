@@ -29,8 +29,16 @@ export function createRecipe(recipe) {
     .then(data => data.json());
 }
 
-export function myRecipes() {
+export function myRecipes() {
     let token = window.sessionStorage.getItem("token");
     return fetch(api + 'myRecipes/' + token)
+        .then(data => data.json());
+}
+
+export function deleteRecipe(id) {
+    let token = "?token=" + window.sessionStorage.getItem("token");
+    return fetch(api + 'delete/' + id + token, {
+        method: 'DELETE'
+    })
         .then(data => data.json());
 }
