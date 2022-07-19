@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function NonnaLogin() {
   let navigate = useNavigate();
-  const [open, setOpen] = React.useState(false);
+  const [showErrorMessage, setShowErrorMessage] = React.useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,7 +28,7 @@ export default function NonnaLogin() {
       email: data.get('email'),
       password: data.get('password'),
     });
-    if (data.get('email') !== "" || data.get('password')) {
+    if (data.get('email') !== "" && data.get('password') !== "") {
       login({
         email: data.get('email'),
         password: data.get('password'),
@@ -37,7 +37,7 @@ export default function NonnaLogin() {
         navigate("../", { replace: true });
       });
     } else {
-      setOpen(true);
+      setShowErrorMessage(true);
     }
   };
 
@@ -94,7 +94,7 @@ export default function NonnaLogin() {
               id="password"
               autoComplete="current-password"
             />
-            <Collapse in={open}>
+            <Collapse in={showErrorMessage}>
               <Alert
                 severity="error"
                 action={
@@ -103,7 +103,7 @@ export default function NonnaLogin() {
                     color="inherit"
                     size="small"
                     onClick={() => {
-                      setOpen(false);
+                      setShowErrorMessage(false);
                     }}
                   >
                     <CloseIcon fontSize="inherit" />
