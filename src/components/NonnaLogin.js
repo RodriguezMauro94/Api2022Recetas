@@ -89,7 +89,7 @@ export default function NonnaLogin() {
               required
               fullWidth
               name="password"
-              label="Contrasena"
+              label="Contraseña"
               type="password"
               id="password"
               autoComplete="current-password"
