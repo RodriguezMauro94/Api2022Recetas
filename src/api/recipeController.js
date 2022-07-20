@@ -13,7 +13,7 @@ export function getRecipes(search) {
 
 export function getRecipeDetails(id) {
     let token = window.sessionStorage.getItem("token");
-    let tokenIfExists = token? "?token=" + token : "";
+    let tokenIfExists = token ? "?token=" + token : "";
     return fetch(api + 'details/' + id + tokenIfExists)
         .then(data => data.json());
 }
@@ -24,9 +24,9 @@ export function createRecipe(recipe) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({recipe})
+        body: JSON.stringify({ recipe })
     })
-    .then(data => data.json());
+        .then(data => data.json());
 }
 
 export function myRecipes() {
@@ -39,6 +39,14 @@ export function deleteRecipe(id) {
     let token = "?token=" + window.sessionStorage.getItem("token");
     return fetch(api + 'delete/' + id + token, {
         method: 'DELETE'
+    })
+        .then(data => data.json());
+}
+
+export function publishRecipe(id) {
+    let token = "?token=" + window.sessionStorage.getItem("token");
+    return fetch(api + 'publish/' + id + token, {
+        method: 'PUT'
     })
         .then(data => data.json());
 }

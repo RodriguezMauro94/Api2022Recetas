@@ -6,7 +6,7 @@ import NonnaCreateReview from "../components/NonnaCreateReview";
 import NonnaRecipeResume from "../components/NonnaRecipeResume";
 import NonnaRecipeStep from "../components/NonnaRecipeStep";
 import difficulties from '../data/difficulties.json';
-import { getRecipeDetails, deleteRecipe } from '../api/recipeController';
+import { getRecipeDetails, deleteRecipe, publishRecipe } from '../api/recipeController';
 import { Button, Stack } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 
@@ -32,6 +32,13 @@ export default function NonnaRecipePage() {
     deleteRecipe(params.id)
       .then(recipes => {
         navigate("../", { replace: true });
+      })
+  }
+
+  function handlePublishRecipe() {
+    publishRecipe(params.id)
+      .then(recipes => {
+        window.location.reload(false);
       })
   }
 
@@ -69,6 +76,11 @@ export default function NonnaRecipePage() {
             <>
               <Stack spacing={2} direction="row">
                 <Button color="inherit" variant="outlined">Editar</Button>
+                {(recipe.status == 'draft') ?
+                  <Button color="inherit" variant="outlined" onClick={handlePublishRecipe}>Publicar</Button>
+                  :
+                  <></>
+                }
                 <Button color="inherit" variant="contained" onClick={handleDeleteRecipe}>Eliminar receta</Button>
               </Stack>
             </>

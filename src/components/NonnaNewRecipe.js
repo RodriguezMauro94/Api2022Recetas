@@ -9,8 +9,10 @@ import NonnaStepCreator from "./NonnaStepCreator";
 import difficulties from '../data/difficulties.json'
 import categories from '../data/categories.json'
 import { createRecipe } from "../api/recipeController";
+import { useNavigate } from "react-router-dom";
 
 export default function NonnaNewRecipe(props) {
+    let navigate = useNavigate();
     const classes = useStyles();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -33,7 +35,15 @@ export default function NonnaNewRecipe(props) {
         steps = rows;
     }
 
-    const createRecipeEvent = (event) => {
+    const handleCreateRecipe = (event) => {
+        createRecipeEvent('active', event);
+    };
+
+    const handleDraftRecipe = (event) => {
+        createRecipeEvent('draft', event);
+    };
+
+    function createRecipeEvent(status, event) {
         event.preventDefault();
         createRecipe({
             user: window.sessionStorage.getItem("token"),
@@ -45,11 +55,12 @@ export default function NonnaNewRecipe(props) {
             difficulty: difficulty,
             vegan: vegan,
             celiac: celiac,
-            category: category
+            category: category,
+            status: status
         }).then((data) => {
-            //TODO ir al detalle de la receta?
+            navigate("../receta/" + data.createdRecipe, { replace: true });
         });
-    };
+    }
 
     return (
         <Paper sx={{ p: 3, margin: 1, maxWidth: 'auto', flexGrow: 1, marginTop: 2 }}>
@@ -168,8 +179,8 @@ export default function NonnaNewRecipe(props) {
                     <Typography variant="h5" className={classes.subtitle}>Pasos</Typography>
                     <NonnaStepCreator callback={stepsCallback} />
                     <Stack spacing={2} direction="row">
-                        <Button color="inherit" variant="outlined">Guardar borrador</Button>
-                        <Button color="inherit" variant="contained" onClick={createRecipeEvent}>Publicar receta</Button>
+                        <Button color="inherit" variant="outlined" onClick={handleDraftRecipe}>Guardar borrador</Button>
+                        <Button color="inherit" variant="contained" onClick={handleCreateRecipe}>Publicar receta</Button>
                     </Stack>
                 </Grid>
             </Grid>

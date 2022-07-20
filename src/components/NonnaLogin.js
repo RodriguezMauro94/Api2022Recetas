@@ -35,6 +35,7 @@ export default function NonnaLogin() {
       }).then((data) => {
         window.sessionStorage.setItem("token", data.loginUser.token);
         navigate("../", { replace: true });
+        window.location.reload(false);
       });
     } else {
       setShowErrorMessage(true);

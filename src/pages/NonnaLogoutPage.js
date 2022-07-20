@@ -1,7 +1,7 @@
 import React from "react";
 import NonnaAboutUs from "../components/NonnaAboutUs";
 
-export default function NonnaLoginPage() {
+export default function NonnaLogoutPage() {
     return (
         <>
             {
