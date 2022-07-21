@@ -42,6 +42,10 @@ export default function NonnaRecipePage() {
       })
   }
 
+  function handleEditRecipe() {
+      navigate("../modificar/" + params.id, { replace: true });
+  }
+
   function calculateRating(ratings) {
     let result = 0;
     ratings.forEach(rating => {
@@ -75,7 +79,7 @@ export default function NonnaRecipePage() {
           {isMine ?
             <>
               <Stack spacing={2} direction="row">
-                <Button color="inherit" variant="outlined">Editar</Button>
+                <Button color="inherit" variant="outlined" onClick={handleEditRecipe}>Editar</Button>
                 {(recipe.status == 'draft') ?
                   <Button color="inherit" variant="outlined" onClick={handlePublishRecipe}>Publicar</Button>
                   :
