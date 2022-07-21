@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import { makeStyles } from '@material-ui/core/styles';
@@ -25,7 +25,7 @@ function createData(ingredient, quantity) {
     };
 }
 
-const rows = [
+var rows = [
 ];
 
 const headCells = [
@@ -136,6 +136,11 @@ export default function NonnaIngredientsTable(props) {
     const [selected, setSelected] = useState([]);
     const [newIngredient, setNewIngredient] = useState('');
     const [quantityIngredient, setQuantityIngredient] = useState('');
+
+    useEffect(() => {
+        rows = props.ingredients ? props.ingredients : [];
+        setTableRows(rows);
+    }, []);
 
     const handleNewIngredientChange = event => {
         setNewIngredient(event.target.value);

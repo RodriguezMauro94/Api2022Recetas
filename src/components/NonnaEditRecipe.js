@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { TextField, useMediaQuery } from '@material-ui/core';
@@ -16,14 +16,14 @@ export default function NonnaEditRecipe(props) {
     const classes = useStyles();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    var ingredientRows = props.ingredients;
-    var steps = props.steps;
-    const [name, setName] = useState(props.name);
-    const [description, setDescription] = useState(props.description);
-    const [difficulty, setDifficulty] = useState(props.difficulty);
-    const [vegan, setVegan] = useState(props.isVegan);
-    const [celiac, setCeliac] = useState(props.isCeliac);
-    const [category, setCategory] = useState(props.category);
+    var ingredientRows = props.recipe.ingredients;
+    var steps = props.recipe.steps;
+    const [name, setName] = useState(props.recipe.name);
+    const [description, setDescription] = useState(props.recipe.description);
+    const [difficulty, setDifficulty] = useState(props.recipe.difficulty);
+    const [vegan, setVegan] = useState(props.recipe.isVegan);
+    const [celiac, setCeliac] = useState(props.recipe.isCeliac);
+    const [category, setCategory] = useState(props.recipe.category);
 
     const uploadInputRef = useRef(null);
 
@@ -102,7 +102,7 @@ export default function NonnaEditRecipe(props) {
                             label="Título"
                             variant="filled"
                             maxRows={4}
-                            defaultValue={props.name}
+                            defaultValue={props.recipe.name}
                             onChange={(event) => setName(event.target.value)}
                             className={classes.review}
                         />
@@ -111,7 +111,7 @@ export default function NonnaEditRecipe(props) {
                             multiline
                             variant="filled"
                             maxRows={4}
-                            defaultValue={props.description}
+                            defaultValue={props.recipe.description}
                             onChange={(event) => setDescription(event.target.value)}
                             className={classes.review}
                         />
@@ -160,7 +160,7 @@ export default function NonnaEditRecipe(props) {
                                     Apto vegano:
                                 </Typography>
                                 <Checkbox id="vegan-check"
-                                    defaultValue={props.isVegan}
+                                    defaultValue={props.recipe.isVegan}
                                     onChange={(event) => setVegan(event.target.value)} />
                             </div>
 
@@ -169,19 +169,19 @@ export default function NonnaEditRecipe(props) {
                                     Apto celíaco:
                                 </Typography>
                                 <Checkbox id="celiac-check"
-                                    defaultValue={props.isCeliac}
+                                    defaultValue={props.recipe.isCeliac}
                                     onChange={(event) => setCeliac(event.target.value)} />
                             </div>
                         </div>
                     </Grid>
                 </Grid>
                 <Grid spacing={0.5} container direction="column" justifyContent="center" alignItems="flex-start" sx={{ marginTop: 5 }}>
-                    <NonnaIngredientsTable callback={ingredientCallback} />
+                    <NonnaIngredientsTable callback={ingredientCallback} ingredients={props.recipe.ingredients} />
                 </Grid>
 
                 <Grid spacing={0.5} container direction="column" justifyContent="center" alignItems="flex-start">
                     <Typography variant="h5" className={classes.subtitle}>Pasos</Typography>
-                    <NonnaStepCreator callback={stepsCallback} />
+                    <NonnaStepCreator callback={stepsCallback} steps={props.recipe.steps} />
                     <Stack spacing={2} direction="row">
                         <Button color="inherit" variant="outlined" onClick={handleDraftRecipe}>Guardar borrador</Button>
                         <Button color="inherit" variant="contained" onClick={handleCreateRecipe}>Publicar receta</Button>

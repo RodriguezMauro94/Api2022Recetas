@@ -13,7 +13,7 @@ import NonnaAboutUsPage from './pages/NonnaAboutUsPage';
 import NonnaRecipePage from './pages/NonnaRecipePage';
 import NonnaSearchPage from './pages/NonnaSearchPage';
 import NonnaNewRecipePage from './pages/NonnaNewRecipePage';
-import NonnaEditRecipePage from './pages/NonnaNewRecipePage';
+import NonnaEditRecipePage from './pages/NonnaEditRecipePage';
 import NonnaForgottenPasswordPage from './pages/NonnaForgottenPasswordPage';
 import NonnaMyProfilePage from './pages/NonnaMyProfilePage';
 

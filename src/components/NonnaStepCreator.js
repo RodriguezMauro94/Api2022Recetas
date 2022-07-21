@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import { Button, Stack, TextField } from '@mui/material';
@@ -14,6 +14,10 @@ export default function NonnaStepCreator(props) {
     const [description, setDescription] = useState('');
 
     const uploadInputRef = useRef(null);
+
+    useEffect(() => {
+        setSteps(props.steps ? props.steps : []);
+    }, []);
 
     function createData(title, description) {
         return {
