@@ -195,7 +195,7 @@ Project Link: [https://github.com/RodriguezMauro94/Api2022Recetas](https://githu
 <!-- ACKNOWLEDGMENTS -->
 ## Reconocimientos
 
-Remplazar con todos los recursos que utilizamos para llevar acabo el proyecto!
+
 
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
@@ -205,6 +205,18 @@ Remplazar con todos los recursos que utilizamos para llevar acabo el proyecto!
 * [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- PROYECTOS -->
+## Proyectos
+
+| Proyecto | Link |
+| ------ | ------ |
+| **FRONT** | https://github.com/RodriguezMauro94/Api2022Recetas |
+| **BACK** | https://github.com/RodriguezMauro94/Api2022RecetasBack |
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
